@@ -43,8 +43,10 @@ function reverseOrder(arr){
 /*Create a function that changes a given array to list each original element twice, retaining original order.  Have the function return the new array.  For example repeatTwice( [4,”Ulysses”, 42, false] ) should return [4,4, “Ulysses”, “Ulysses”, 42, 42, false, false].*/
 function doubleElement(arr){
 	for (i = 0; i < arr.length; i+=2){
-		arr.splice(i,0,arr[i])
+		// arr.splice(i,0,arr[i])
 	}
 	return arr
 }
-// console.log(doubleElement(arr))
+console.log(arr)
+y = doubleElement(arr)
+console.log(y)
