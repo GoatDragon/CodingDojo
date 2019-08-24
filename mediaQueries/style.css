@@ -1,0 +1,58 @@
+*{
+	/*outline: dotted red;*/
+/*	padding:0;
+	margin:0;
+	border:0;*/
+	font-family:sans-serif;
+}
+.title{
+	height: 50px;
+	line-height: 50px;
+	background: grey;
+}
+.paragraph{
+	display: inline-block;
+	border-color: grey;
+	border-style: solid;
+	border-width: 0px;
+	background-color: yellow;
+}
+.type{
+	background-color: red;
+}
+@media (max-width: 480px){
+	.small{
+		width:100%;
+	}
+	.desktop{
+		display: none;
+	}	
+	.tablet{
+		display: none;
+	}
+}
+@media (min-width: 481px){
+	.medium{
+		width:49%;
+	}
+	.phone{
+		display: none;
+	}	
+	.desktop{
+		display: none;
+	}
+}
+@media (min-width: 1024px){
+	.large{
+		width:32%;
+	}
+	.phone{
+		display: none;
+	}	
+	.tablet{
+		display: none;
+	}
+	.desktop{
+		display: block;
+	}
+}
