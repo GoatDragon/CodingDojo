@@ -1,0 +1,14 @@
+*{
+	outline: dotted red;
+	margin:0;
+	padding:0;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+.topbar img{
+	width:120px;
+}
+.topbar h1{
+	display: inline-block;
+	text-align: 
+}

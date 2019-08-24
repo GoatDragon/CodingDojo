@@ -1,0 +1,93 @@
+*{
+	background-color: #1b335d;
+	/*outline: dotted red;*/
+}
+a:link{
+	color:#69dce3;
+	background-color: #2a7d8c;
+	display: inline;
+}
+a:visited{
+	color:#69dce3;
+	background-color: #2a7d8c;
+	display: inline;
+}
+
+
+ul{
+	background-color: #2a7d8c;
+	color: #6ce3ea;
+	display: inline-block;
+}
+
+li{
+	background-color: #2a7d8c;
+	color: #6ce3ea;
+}
+
+.text, #content li{
+	color:#c0d2e3;
+	background-color: #0e1822;
+	padding: 7px;
+}
+
+#sections .text{
+	background-color: #0e1822;
+}
+
+#content_header{
+	color:#6ce3ea;
+	background-color: #0e1822;
+	padding: 10px;
+}
+
+#header{
+	background-color: #cf2f36;
+	color: #c0d2e3;
+	height: 75px;
+	line-height: 75px;
+	width: 970px;
+	border-radius: 10px;
+	margin: 10px;
+
+}
+#sidebar{
+	background-color: #2a7d8c;
+	display: inline-block;
+	vertical-align: top;
+	height: 300px;
+	width: 250px;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+#content{
+	background-color: #0e1822;
+	display: inline-block;
+	height: 500px;
+	width: 695px;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+#footer{
+	background-color: #5d6673;
+	height: 50px;
+	width: 970px;
+	border-radius: 10px;
+	margin: 10px;
+	line-height: 50px;
+}
+
+#sections a, #sections li, #content ul{
+	background-color: #0e1822;
+}
+
+#footer a{
+	background-color: #5d6673;	
+}
+
+specialword{
+	background-color: #0e1822;
+	color: #778bff;
+}

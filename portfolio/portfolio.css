@@ -1,0 +1,98 @@
+*{
+	/*outline: dotted red;*/
+	margin: 10px;
+}
+h3{
+	margin: 0px;
+	width:290px;
+	height:50px;
+	line-height: 50px;
+	color:white;
+	background-image: linear-gradient(#b1b1b5,#898794,#b1b1b5);
+}
+
+.about h3{
+	width:500px;
+}
+#page{
+	width: 1000px;
+	background-image: radial-gradient(#897b82,#1c0c10);
+}
+#top_bar{
+	height: 50px;
+	margin: 0px;
+	background-color: #f4f4f4;
+	line-height: 20px;
+}
+.name{
+	display: inline-block;
+}
+.phrase{
+	display: inline-block;
+	text-align: right;	
+	width: 770px;
+}
+#main_content{
+	height: 900px;
+}
+#mypic{
+	width: 400px;
+	display:inline-block;
+	vertical-align: bottom;
+	border-width: 5px;
+	border-color: #c0c0c0;
+}
+.about{
+	height: 270px;
+	width: 500px;
+	display: inline-block;
+	background-color: #f0eaf0;
+}
+a{
+	color: black
+}
+#largepic{
+	margin:0px;
+	width:290px;
+}
+.familycontacts, .fiveeleven, .lamode{
+	height: 400px;
+	width: 290px;
+	display: inline-block;
+	vertical-align: bottom
+}
+.bottom img{
+	margin: 5px;
+	width: 35px;
+}
+button{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	background-color:green;
+	color:white;
+	border-radius: 10px;
+	height:30px;
+}
+#bottom_bar{
+	margin:0px;
+	height: 80px;
+	width:1000px;
+	text-align: center;
+	background-color: #f4f4f4;
+}
+#bottom_bar img{
+	height:19px;
+	vertical-align: bottom;
+	margin:0px;
+}
+#bottom_bar a{
+	margin:0px;
+	font-style: italic;
+}
+
+.bottom, .top{
+	background-image: linear-gradient(to right,#fefdfe,#daccd9);
+	margin:0;
+}

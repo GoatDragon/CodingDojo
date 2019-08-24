@@ -1,0 +1,125 @@
+*Problem 1*
+	2
+	3
+	undefined
+
+*Problem 2*
+	6
+	10
+
+*Problem 3*
+	3
+	7
+
+*problem 4*
+	15
+	15
+	10
+	10
+
+*problem 5*
+	0
+	2
+	4
+	6
+	8
+	10
+	12
+	14
+
+*problem 6*
+	0
+	0
+	0
+	1
+	0
+	2
+
+*problem 7*
+	0
+	0
+	0
+	0
+	1
+	2
+	0
+	2
+	4
+	undefined
+
+*problem 8*
+	0
+	0
+	0
+	0
+	0
+	0
+	1
+	2
+	3
+	4
+	0
+	2
+	4
+	6
+	8
+	15
+
+__part 2__
+
+*problem 1*
+
+function printUpTo(x){
+  if (x < 0){
+      console.log('negative number')
+      return false
+    }
+  else{
+    for(var i=1; i<=x; i++){
+      console.log(i)
+    }
+  }
+}
+printUpTo(1000); // should print all the integers from 1 to 1000
+y = printUpTo(-10); // should return false
+console.log(y); // should print false
+
+*problem 2*
+
+function printSum(x){
+  var sum = 0;
+  for(var i=0; i<=x; i++){
+    console.log(i)
+    sum+=i
+    console.log(sum)
+  }
+  
+  return sum;
+}
+y = printSum(255) // should print all the integers from 0 to 255 and with each integer print the sum so far.
+console.log(y) // should print 32640
+
+*problem 3*
+
+function printSumArray(x){
+  var sum = 0;
+  for(var i=0; i<x.length; i++) {
+    sum+=x[i]
+  }
+  return sum;
+}
+console.log( printSumArray([1,2,3]) ); // should log 6
+
+*Bonus*
+
+var largest=Number.NEGATIVE_INFINITY;
+function findLargest(arr){
+  for(var i=0; i<arr.length; i++){
+    if(arr[i] > largest){
+      largest = arr[i];
+    }
+  }
+  return largest;
+}
+
+console.log(findLargest([1,30,5,7]));

@@ -1,0 +1,238 @@
+*{
+	/*outline: dotted red;*/
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.titlebar{
+	width: 899px;
+	height: 60px;
+	line-height: 60px;
+	background-color: #1f3037;
+}
+.yourwebsitetitle{
+	color:white;
+	font-size:200%;
+	margin:0 0 0 10px;
+}
+.com{
+	color:#b9bdae;
+	font-size:150%;
+}
+.titlebar img{
+	float:right;
+	margin:8px 11px 20px 40px;
+	width:40px;
+	outline:solid #6d7c83 1px;
+
+}
+.imggradient{
+	background-color: black;
+	width:899px;
+}
+.navbar{
+	width: 899px;
+	height: 40px;
+	line-height: 40px;
+	background-image: linear-gradient(#41525a, #1f3037);
+}
+.navbar ul li{
+	display: inline-block;
+	margin: 0px 0px 0px 20px;
+	padding: 0px 20px 0px 0px;
+	border-right-width:1px;
+	border-right-color:grey;
+	border-right-style:solid;	
+}
+.navbar ul li a{
+	color:#9bb0cb;
+	text-decoration:none;
+}
+.gradientbar, .gradientbar2{
+	width: 899px;
+	height:25px;
+	background-image:linear-gradient( to right, #4d6861, #283434);
+	border-bottom-width:1px;
+	border-bottom-color:black;
+	border-bottom-style:solid;
+}
+.gradientbar2{
+	border-top-width:2px;
+	border-top-color:black;
+	border-top-style:solid;
+}
+.belowtopbar{
+	background-color: #1f3037;
+	width:899px;
+}
+.leftcolumn{
+	display:inline-block;
+	width:210px;
+	height:750px;
+	background-image:linear-gradient(to right, #31424a, #1f3037);
+}
+.search input{
+	height: 20px;
+	width:120px;
+	outline:solid #6d7c83 2px;
+	margin: 4px 2px 10px 20px;
+}
+.search img{
+	height:20px;
+	position:relative;
+	top: 5px;
+	left: 2px;
+	outline:solid white 1px;
+	margin: 0px 0px 0px 0px;
+}
+.search h4{
+	color:#abb9ba;
+	margin: 0px 2px 0px 20px;
+	font-size: 90%;
+
+}
+.notes1{
+	height: 150px;
+	width:168px;
+	margin: 10px 20px 10px 20px;
+	border-style: solid;
+	border-color: #43545b;
+	border-width: 1px;
+}
+.notes1header{
+	height:30px;
+	line-height: 30px;
+	background-image: linear-gradient(#41525a, #1f3037);
+	border-bottom-style: solid;
+	border-bottom-color: #43545b;
+	border-bottom-width: 1px;
+
+}
+.notes1header h4{
+	color: #abb9ba;
+}
+.notes1 p{
+	margin:10px;
+	font-size: 72%;
+	color:#abb9ba;
+	font-weight: 600;
+
+}
+.notes1 a{
+	color: #d2fb9d;
+	text-decoration: none;
+	margin:20px 0px 0px 10px;
+	font-size: 72%
+	font-weight: 600;
+}
+.vertical{
+	height: 150px;
+	width:168px;
+	margin: 10px 20px 10px 20px;
+	background-image: linear-gradient(#142628, #395853);
+	border-style: solid;
+	border-color: #43545b;
+	border-width: 1px;
+}
+.vertical p{
+	color: #abb9ba;
+	font-size:80%;
+}
+.content1img{
+	margin: 10px 20px 10px 20px;
+}
+.content{
+	vertical-align: bottom;
+	display:inline-block;
+	width:675px;
+	height:750px;
+	background-image:linear-gradient(#263b40, #365651);
+	border-radius: 50px 50px 0 0;
+	margin: 0 10px 0 0;
+}
+.content a{
+	text-decoration: none;
+	color:#d2fb9d;
+}
+.leftcontent{
+	width:500px;
+}
+.paragraphs{
+	margin:30px 0 60px 15px;
+	width:460px;
+	height:133px;
+}
+.paragraphs p, .paragraphs h1{
+	color:#abb9ba;
+	display: inline-block;
+	text-align:justify;
+}
+.paragraphs h1{
+	font-family:serif;
+	font-size:95%;
+	color:white;
+}
+.rightcontent{
+	display:inline-block;
+	position:relative;
+	left:3%;
+	top:-89%;
+	height:740px;
+	width:185px;
+}
+.breakbox, .breakbox2{
+	display:inline-block;
+	width:447px;
+	height:3px;
+	border-style: solid;
+	border-color: #43545b;
+	border-width: 2px;
+	position:relative;
+	top:1%;
+	left:3%;
+}
+.breakbox2{
+	top:-39%;
+}
+.notes2{
+	height: 80px;
+	width:155px;
+	margin: 10px 20px 10px 20px;
+	border-style: solid;
+	border-color: #43545b;
+	border-width: 1px;
+}
+.notes2 h4{
+	border-style: solid;
+	border-color: #43545b;
+	border-width: 1px;
+	width:100px;
+	color:white;
+	position:relative;
+	top:-12%;
+	left:5%;
+	z-index: +1
+	opacity:0;	
+}
+.notes2 p{
+	margin: 2px;
+	position:relative;
+	top:-13%;
+	left:3%;
+	font-size: 72%;
+	color:#abb9ba;
+	font-weight: 600;
+}
+.notes2 p a{
+	text-decoration: none;
+	color:#d2fb9d;
+}
+.content2img{
+	position:relative;
+	left:12%;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	margin: 20px 0;
+}
