@@ -82,6 +82,31 @@ return secLargest
 }
 //console.log(secondLargest([42,1,4,3.14,7]))
 
+	//second way of writing second-Largest with one for loop.
+function otherSecondLargest(arr){
+	if (arr[0]>arr[1]){
+		largest = arr[0]
+		secLargest = arr[1]
+	}
+	else{
+		largest = arr[1]
+		secLargest = arr[0]
+	}
+	for (i=2; i<arr.length; i++){
+		if (arr[i] > largest){
+			secLargest = largest
+			largest = arr[i]
+		}
+		else if (arr[i] > secLargest){
+				secLargest = arr[i]
+		}
+	}
+	return secLargest
+
+}
+console.log(otherSecondLargest([42,1000,50,43,100,4,3.14,7]))
+
+
     // Double Trouble: Create a function that changes a given array to list each existing element twice, retaining original order.  Convert [4, "Ulysses", 42, false] to [4,4, "Ulysses", "Ulysses", 42, 42, false, false].
 function doubleTrouble(arr){
 	for(i=0; i<arr.length; i+=2){
@@ -89,4 +114,4 @@ function doubleTrouble(arr){
 	}
 	return arr
 }
-//console.log(doubleTrouble([1,2,3,4,5]))
+// console.log(doubleTrouble([1,2,3,4,5]))
