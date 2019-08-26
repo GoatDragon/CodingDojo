@@ -1,0 +1,487 @@
+execve("/usr/bin/git", ["git", "status"], 0x7ffdd7f89828 /* 60 vars */) = 0
+brk(NULL)                               = 0x56254e8ad000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffec9c0fe20) = -1 EINVAL (Invalid argument)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=214997, ...}) = 0
+mmap(NULL, 214997, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f34fcf1f000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0  \0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=571432, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f34fcf1d000
+mmap(NULL, 574024, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f34fce90000
+mmap(0x7f34fce92000, 401408, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f34fce92000
+mmap(0x7f34fcef4000, 159744, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x64000) = 0x7f34fcef4000
+mmap(0x7f34fcf1b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8a000) = 0x7f34fcf1b000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320!\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=91912, ...}) = 0
+mmap(NULL, 2187280, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f34fcc79000
+mprotect(0x7f34fcc8f000, 2093056, PROT_NONE) = 0
+mmap(0x7f34fce8e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7f34fce8e000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360\201\0\0\0\0\0\0"..., 832) = 832
+lseek(3, 824, SEEK_SET)                 = 824
+read(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\222g\260<=\26\316\256\274\274\324\330\35st\262"..., 68) = 68
+fstat(3, {st_mode=S_IFREG|0755, st_size=155904, ...}) = 0
+lseek(3, 824, SEEK_SET)                 = 824
+read(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\222g\260<=\26\316\256\274\274\324\330\35st\262"..., 68) = 68
+mmap(NULL, 131528, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f34fcc58000
+mmap(0x7f34fcc5f000, 61440, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7f34fcc5f000
+mmap(0x7f34fcc6e000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7f34fcc6e000
+mmap(0x7f34fcc73000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7f34fcc73000
+mmap(0x7f34fcc75000, 12744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f34fcc75000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/librt.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\3606\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=39408, ...}) = 0
+mmap(NULL, 43512, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f34fcc4d000
+mmap(0x7f34fcc50000, 16384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f34fcc50000
+mmap(0x7f34fcc54000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7f34fcc54000
+mmap(0x7f34fcc56000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7f34fcc56000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360o\2\0\0\0\0\0"..., 832) = 832
+lseek(3, 64, SEEK_SET)                  = 64
+read(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784) = 784
+lseek(3, 848, SEEK_SET)                 = 848
+read(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+lseek(3, 880, SEEK_SET)                 = 880
+read(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\250\257l\201\313(\243{\363\245F\227\v\366B$"..., 68) = 68
+fstat(3, {st_mode=S_IFREG|0755, st_size=2133648, ...}) = 0
+lseek(3, 64, SEEK_SET)                  = 64
+read(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784) = 784
+lseek(3, 848, SEEK_SET)                 = 848
+read(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+lseek(3, 880, SEEK_SET)                 = 880
+read(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\250\257l\201\313(\243{\363\245F\227\v\366B$"..., 68) = 68
+mmap(NULL, 1844408, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f34fca8a000
+mprotect(0x7f34fcaaf000, 1654784, PROT_NONE) = 0
+mmap(0x7f34fcaaf000, 1351680, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7f34fcaaf000
+mmap(0x7f34fcbf9000, 299008, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16f000) = 0x7f34fcbf9000
+mmap(0x7f34fcc43000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b8000) = 0x7f34fcc43000
+mmap(0x7f34fcc49000, 13496, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f34fcc49000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f34fca88000
+arch_prctl(ARCH_SET_FS, 0x7f34fca89280) = 0
+mprotect(0x7f34fcc43000, 12288, PROT_READ) = 0
+mprotect(0x7f34fcc73000, 4096, PROT_READ) = 0
+mprotect(0x7f34fcc56000, 4096, PROT_READ) = 0
+mprotect(0x7f34fce8e000, 4096, PROT_READ) = 0
+mprotect(0x7f34fcf1b000, 4096, PROT_READ) = 0
+mprotect(0x56254c87a000, 16384, PROT_READ) = 0
+mprotect(0x7f34fcf7e000, 4096, PROT_READ) = 0
+munmap(0x7f34fcf1f000, 214997)          = 0
+set_tid_address(0x7f34fca89550)         = 2971
+set_robust_list(0x7f34fca89560, 24)     = 0
+rt_sigaction(SIGRTMIN, {sa_handler=0x7f34fcc5fc30, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f34fcc6bd00}, NULL, 8) = 0
+rt_sigaction(SIGRT_1, {sa_handler=0x7f34fcc5fcd0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f34fcc6bd00}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+openat(AT_FDCWD, "/dev/null", O_RDWR)   = 3
+close(3)                                = 0
+rt_sigprocmask(SIG_UNBLOCK, [PIPE], NULL, 8) = 0
+rt_sigaction(SIGPIPE, {sa_handler=SIG_DFL, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+brk(NULL)                               = 0x56254e8ad000
+brk(0x56254e8ce000)                     = 0x56254e8ce000
+access("/etc/gitconfig", R_OK)          = -1 ENOENT (No such file or directory)
+access("/home/sam/.config/git/config", R_OK) = -1 ENOENT (No such file or directory)
+access("/home/sam/.gitconfig", R_OK)    = 0
+openat(AT_FDCWD, "/home/sam/.gitconfig", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=48, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=48, ...}) = 0
+read(3, "[user]\n\tname = Sam Jackson\n\temai"..., 4096) = 48
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+stat("/usr/share/locale", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=3031632, ...}) = 0
+mmap(NULL, 3031632, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f34fc7a3000
+close(3)                                = 0
+getcwd("/home/sam/CodingDojo/javascript", 129) = 32
+stat("/home/sam/CodingDojo/javascript", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/home/sam/CodingDojo/javascript/.git", 0x7ffec9c0f870) = -1 ENOENT (No such file or directory)
+lstat("/home/sam/CodingDojo/javascript/.git/HEAD", 0x7ffec9c0f740) = -1 ENOENT (No such file or directory)
+lstat("/home/sam/CodingDojo/javascript/HEAD", 0x7ffec9c0f740) = -1 ENOENT (No such file or directory)
+stat("/home/sam/CodingDojo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/home/sam/CodingDojo/.git", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/home/sam/CodingDojo/.git/HEAD", {st_mode=S_IFREG|0644, st_size=23, ...}) = 0
+openat(AT_FDCWD, "/home/sam/CodingDojo/.git/HEAD", O_RDONLY) = 3
+read(3, "ref: refs/heads/master\n", 255) = 23
+read(3, "", 232)                        = 0
+close(3)                                = 0
+lstat("/home/sam/CodingDojo/.git/commondir", 0x7ffec9c0f7d0) = -1 ENOENT (No such file or directory)
+access("/home/sam/CodingDojo/.git/objects", X_OK) = 0
+access("/home/sam/CodingDojo/.git/refs", X_OK) = 0
+chdir("/home/sam/CodingDojo")           = 0
+lstat(".git/commondir", 0x7ffec9c0f8d0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/config", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=207, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=207, ...}) = 0
+read(3, "[core]\n\trepositoryformatversion "..., 4096) = 207
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+getcwd("/home/sam/CodingDojo", 129)     = 21
+stat(".git", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat(".git/commondir", 0x7ffec9c0f860) = -1 ENOENT (No such file or directory)
+access("/etc/gitconfig", R_OK)          = -1 ENOENT (No such file or directory)
+access("/home/sam/.config/git/config", R_OK) = -1 ENOENT (No such file or directory)
+access("/home/sam/.gitconfig", R_OK)    = 0
+openat(AT_FDCWD, "/home/sam/.gitconfig", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=48, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=48, ...}) = 0
+read(3, "[user]\n\tname = Sam Jackson\n\temai"..., 4096) = 48
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+access(".git/config", R_OK)             = 0
+openat(AT_FDCWD, ".git/config", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=207, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=207, ...}) = 0
+read(3, "[core]\n\trepositoryformatversion "..., 4096) = 207
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+getcwd("/home/sam/CodingDojo", 129)     = 21
+chdir("/home/sam/CodingDojo")           = 0
+lstat(".git/commondir", 0x7ffec9c0f920) = -1 ENOENT (No such file or directory)
+lstat(".git/HEAD", {st_mode=S_IFREG|0644, st_size=23, ...}) = 0
+openat(AT_FDCWD, ".git/HEAD", O_RDONLY) = 3
+read(3, "ref: refs/heads/master\n", 256) = 23
+read(3, "", 233)                        = 0
+close(3)                                = 0
+lstat(".git/refs/heads/master", {st_mode=S_IFREG|0644, st_size=41, ...}) = 0
+openat(AT_FDCWD, ".git/refs/heads/master", O_RDONLY) = 3
+read(3, "745d6b1747ed8b7060e85b88c8b0b5ff"..., 256) = 41
+read(3, "", 215)                        = 0
+close(3)                                = 0
+access("/etc/gitconfig", R_OK)          = -1 ENOENT (No such file or directory)
+access("/home/sam/.config/git/config", R_OK) = -1 ENOENT (No such file or directory)
+access("/home/sam/.gitconfig", R_OK)    = 0
+openat(AT_FDCWD, "/home/sam/.gitconfig", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=48, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=48, ...}) = 0
+read(3, "[user]\n\tname = Sam Jackson\n\temai"..., 4096) = 48
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+access(".git/config", R_OK)             = 0
+openat(AT_FDCWD, ".git/config", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=207, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=207, ...}) = 0
+read(3, "[core]\n\trepositoryformatversion "..., 4096) = 207
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+lstat(".git/MERGE_HEAD", 0x7ffec9c0fa40) = -1 ENOENT (No such file or directory)
+lstat(".git/CHERRY_PICK_HEAD", 0x7ffec9c0fa40) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/index", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=8713, ...}) = 0
+mmap(NULL, 8713, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f34fcf51000
+close(3)                                = 0
+mmap(NULL, 1052672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f34fc6a2000
+munmap(0x7f34fcf51000, 8713)            = 0
+ioctl(2, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=2997, ...}) = 0
+read(3, "# Locale name alias data base.\n#"..., 4096) = 2997
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/git.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/git.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/git.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/git.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/git.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/git.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+rt_sigaction(SIGALRM, {sa_handler=0x56254c72ddc0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcc6bd00}, NULL, 8) = 0
+setitimer(ITIMER_REAL, {it_interval={tv_sec=1, tv_usec=0}, it_value={tv_sec=1, tv_usec=0}}, NULL) = 0
+lstat("html_css", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("html_css/Algorithm1.txt", {st_mode=S_IFREG|0644, st_size=154, ...}) = 0
+lstat("html_css/AlgorithmV.js", {st_mode=S_IFREG|0644, st_size=1578, ...}) = 0
+lstat("html_css/SamJacksonHtmlCssExam.zip", {st_mode=S_IFREG|0644, st_size=235446, ...}) = 0
+lstat("html_css/about_python.zip", {st_mode=S_IFREG|0644, st_size=18332, ...}) = 0
+lstat("html_css/about_python_css", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("html_css/about_python_css/about_python.css", {st_mode=S_IFREG|0644, st_size=2938, ...}) = 0
+lstat("html_css/about_python_css/about_python.html", {st_mode=S_IFREG|0644, st_size=3281, ...}) = 0
+lstat("html_css/about_python_css/python.png", {st_mode=S_IFREG|0644, st_size=15770, ...}) = 0
+lstat("html_css/algorithm2.txt", {st_mode=S_IFREG|0644, st_size=1327, ...}) = 0
+lstat("html_css/algorithm3.txt", {st_mode=S_IFREG|0644, st_size=1151, ...}) = 0
+lstat("html_css/algorithmIV.js", {st_mode=S_IFREG|0644, st_size=1653, ...}) = 0
+lstat("html_css/algorithmIV.txt", {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+lstat("html_css/algorithmtest.js", {st_mode=S_IFREG|0644, st_size=89, ...}) = 0
+lstat("html_css/fake_blog_post.html", {st_mode=S_IFREG|0644, st_size=2623, ...}) = 0
+lstat("html_css/goatpic.jpg", {st_mode=S_IFREG|0644, st_size=248447, ...}) = 0
+lstat("html_css/hello_world.html", {st_mode=S_IFREG|0644, st_size=137, ...}) = 0
+lstat("html_css/htmlcssexam", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("html_css/htmlcssexam/banner_img.png", {st_mode=S_IFREG|0644, st_size=159155, ...}) = 0
+lstat("html_css/htmlcssexam/content_img1.png", {st_mode=S_IFREG|0644, st_size=42036, ...}) = 0
+lstat("html_css/htmlcssexam/content_img2.png", {st_mode=S_IFREG|0644, st_size=26370, ...}) = 0
+lstat("html_css/htmlcssexam/exam.html", {st_mode=S_IFREG|0644, st_size=4209, ...}) = 0
+lstat("html_css/htmlcssexam/logo.png", {st_mode=S_IFREG|0644, st_size=2943, ...}) = 0
+lstat("html_css/htmlcssexam/read_me.txt", {st_mode=S_IFREG|0644, st_size=165, ...}) = 0
+lstat("html_css/htmlcssexam/search_icon.png", {st_mode=S_IFREG|0644, st_size=1087, ...}) = 0
+lstat("html_css/htmlcssexam/style.css", {st_mode=S_IFREG|0644, st_size=3900, ...}) = 0
+lstat("html_css/indentation_practice.html", {st_mode=S_IFREG|0644, st_size=149, ...}) = 0
+lstat("html_css/indentation_practice1.html", {st_mode=S_IFREG|0644, st_size=149, ...}) = 0
+lstat("html_css/indentation_practice2.html", {st_mode=S_IFREG|0644, st_size=828, ...}) = 0
+lstat("html_css/index.html", {st_mode=S_IFREG|0644, st_size=314, ...}) = 0
+lstat("html_css/internet_css_project", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("html_css/internet_css_project/ad_background.png", {st_mode=S_IFREG|0644, st_size=352053, ...}) = 0
+lstat("html_css/internet_css_project/client_server.jpg", {st_mode=S_IFREG|0644, st_size=32176, ...}) = 0
+lstat("html_css/internet_css_project/globe.png", {st_mode=S_IFREG|0644, st_size=262730, ...}) = 0
+lstat("html_css/internet_css_project/home.png", {st_mode=S_IFREG|0644, st_size=5140, ...}) = 0
+lstat("html_css/internet_css_project/html.png", {st_mode=S_IFREG|0644, st_size=130300, ...}) = 0
+lstat("html_css/internet_css_project/internet.html", {st_mode=S_IFREG|0644, st_size=516, ...}) = 0
+lstat("html_css/internet_css_project/ninja.png", {st_mode=S_IFREG|0644, st_size=21068, ...}) = 0
+lstat("html_css/internet_css_project/phone.png", {st_mode=S_IFREG|0755, st_size=6938, ...}) = 0
+lstat("html_css/internet_css_project/style.css", {st_mode=S_IFREG|0644, st_size=176, ...}) = 0
+lstat("html_css/javascript_basics.css", {st_mode=S_IFREG|0644, st_size=1278, ...}) = 0
+lstat("html_css/javascript_basics.html", {st_mode=S_IFREG|0644, st_size=1774, ...}) = 0
+lstat("html_css/javascript_basics.zip", {st_mode=S_IFREG|0644, st_size=1304, ...}) = 0
+lstat("html_css/jumbotron.html", {st_mode=S_IFREG|0644, st_size=4623, ...}) = 0
+lstat("html_css/less_practice_about_python.html", {st_mode=S_IFREG|0644, st_size=3494, ...}) = 0
+lstat("html_css/mediaQueries.zip", {st_mode=S_IFREG|0644, st_size=1321, ...}) = 0
+lstat("html_css/mediaQueries", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("html_css/mediaQueries/mediaQueries.html", {st_mode=S_IFREG|0644, st_size=1818, ...}) = 0
+lstat("html_css/mediaQueries/style.css", {st_mode=S_IFREG|0644, st_size=698, ...}) = 0
+lstat("html_css/minmaxavg.js", {st_mode=S_IFREG|0644, st_size=375, ...}) = 0
+lstat("html_css/portfolio", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("html_css/portfolio/CSS.png", {st_mode=S_IFREG|0644, st_size=11021, ...}) = 0
+lstat("html_css/portfolio/HTML.png", {st_mode=S_IFREG|0644, st_size=10661, ...}) = 0
+lstat("html_css/portfolio/JavaScript.png", {st_mode=S_IFREG|0644, st_size=10786, ...}) = 0
+lstat("html_css/portfolio/LAMP.png", {st_mode=S_IFREG|0644, st_size=10620, ...}) = 0
+lstat("html_css/portfolio/MEAN.png", {st_mode=S_IFREG|0644, st_size=14260, ...}) = 0
+lstat("html_css/portfolio/RUBY.png", {st_mode=S_IFREG|0644, st_size=28155, ...}) = 0
+lstat("html_css/portfolio/ajax.png", {st_mode=S_IFREG|0644, st_size=9931, ...}) = 0
+lstat("html_css/portfolio/algorithm3.txt", {st_mode=S_IFREG|0644, st_size=1151, ...}) = 0
+lstat("html_css/portfolio/angular.png", {st_mode=S_IFREG|0644, st_size=15324, ...}) = 0
+lstat("html_css/portfolio/bootstrap.png", {st_mode=S_IFREG|0644, st_size=13327, ...}) = 0
+lstat("html_css/portfolio/c-sharp.png", {st_mode=S_IFREG|0644, st_size=18533, ...}) = 0
+lstat("html_css/portfolio/codeigniter.png", {st_mode=S_IFREG|0644, st_size=16763, ...}) = 0
+lstat("html_css/portfolio/codepen.png", {st_mode=S_IFREG|0644, st_size=3368, ...}) = 0
+lstat("html_css/portfolio/d3.png", {st_mode=S_IFREG|0644, st_size=17062, ...}) = 0
+lstat("html_css/portfolio/django.png", {st_mode=S_IFREG|0644, st_size=10275, ...}) = 0
+lstat("html_css/portfolio/expressjs.png", {st_mode=S_IFREG|0644, st_size=16638, ...}) = 0
+lstat("html_css/portfolio/familycontacts.png", {st_mode=S_IFREG|0644, st_size=144471, ...}) = 0
+lstat("html_css/portfolio/fiveEleven.png", {st_mode=S_IFREG|0644, st_size=131266, ...}) = 0
+lstat("html_css/portfolio/github.png", {st_mode=S_IFREG|0644, st_size=5075, ...}) = 0
+lstat("html_css/portfolio/iOS-Swift.png", {st_mode=S_IFREG|0644, st_size=16988, ...}) = 0
+lstat("html_css/portfolio/jQuery.png", {st_mode=S_IFREG|0644, st_size=16964, ...}) = 0
+lstat("html_css/portfolio/lamode.png", {st_mode=S_IFREG|0644, st_size=152966, ...}) = 0
+lstat("html_css/portfolio/linkedin.png", {st_mode=S_IFREG|0644, st_size=1945, ...}) = 0
+lstat("html_css/portfolio/materialize.png", {st_mode=S_IFREG|0644, st_size=10558, ...}) = 0
+lstat("html_css/portfolio/mongodb.png", {st_mode=S_IFREG|0644, st_size=15312, ...}) = 0
+lstat("html_css/portfolio/mysql.png", {st_mode=S_IFREG|0644, st_size=13687, ...}) = 0
+lstat("html_css/portfolio/nodejs.png", {st_mode=S_IFREG|0644, st_size=12586, ...}) = 0
+lstat("html_css/portfolio/photo_of_me.jpg", {st_mode=S_IFREG|0644, st_size=50893, ...}) = 0
+lstat("html_css/portfolio/php.png", {st_mode=S_IFREG|0644, st_size=11821, ...}) = 0
+lstat("html_css/portfolio/portfolio.css", {st_mode=S_IFREG|0644, st_size=1437, ...}) = 0
+lstat("html_css/portfolio/portfolio.html", {st_mode=S_IFREG|0644, st_size=3668, ...}) = 0
+lstat("html_css/portfolio/portfolio.zip", {st_mode=S_IFREG|0644, st_size=1483124, ...}) = 0
+lstat("html_css/portfolio/portfolio_assignment.png", {st_mode=S_IFREG|0644, st_size=648992, ...}) = 0
+lstat("html_css/portfolio/python.png", {st_mode=S_IFREG|0644, st_size=27082, ...}) = 0
+lstat("html_css/portfolio/socket.png", {st_mode=S_IFREG|0644, st_size=7797, ...}) = 0
+lstat("html_css/portfolio/sqlite.png", {st_mode=S_IFREG|0644, st_size=20489, ...}) = 0
+lstat("html_css/portfolio/twitter.png", {st_mode=S_IFREG|0644, st_size=2267, ...}) = 0
+lstat("html_css/registration_forum.html", {st_mode=S_IFREG|0644, st_size=1537, ...}) = 0
+lstat("html_css/test_form.html", {st_mode=S_IFREG|0644, st_size=1702, ...}) = 0
+lstat("javascript", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("javascript/basicFoundation1.js", {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+lstat("javascript/gittest.txt", {st_mode=S_IFREG|0644, st_size=19, ...}) = 0
+openat(AT_FDCWD, "javascript/gittest.txt", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/etc/gitattributes", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/sam/.config/git/attributes", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".gitattributes", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/info/attributes", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "javascript/.gitattributes", O_RDONLY) = -1 ENOENT (No such file or directory)
+read(3, "this is a TEST file", 19)      = 19
+close(3)                                = 0
+setitimer(ITIMER_REAL, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+rt_sigaction(SIGALRM, {sa_handler=SIG_IGN, sa_mask=[ALRM], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, {sa_handler=0x56254c72ddc0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcc6bd00}, 8) = 0
+readlink(".git/index", 0x56254e8b73f0, 32) = -1 EINVAL (Invalid argument)
+getcwd("/home/sam/CodingDojo", 129)     = 21
+stat("/home/sam/CodingDojo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/home/sam/CodingDojo/javascript", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+openat(AT_FDCWD, "/home/sam/CodingDojo/.git/index.lock", O_RDWR|O_CREAT|O_EXCL|O_CLOEXEC, 0666) = 3
+rt_sigaction(SIGINT, {sa_handler=0x56254c7958f0, sa_mask=[INT], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGHUP, {sa_handler=0x56254c7958f0, sa_mask=[HUP], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTERM, {sa_handler=0x56254c7958f0, sa_mask=[TERM], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=0x56254c7958f0, sa_mask=[QUIT], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGPIPE, {sa_handler=0x56254c7958f0, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, {sa_handler=SIG_DFL, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, 8) = 0
+getpid()                                = 2971
+lstat(".git/HEAD", {st_mode=S_IFREG|0644, st_size=23, ...}) = 0
+openat(AT_FDCWD, ".git/HEAD", O_RDONLY) = 4
+read(4, "ref: refs/heads/master\n", 256) = 23
+read(4, "", 233)                        = 0
+close(4)                                = 0
+lstat(".git/refs/heads/master", {st_mode=S_IFREG|0644, st_size=41, ...}) = 0
+openat(AT_FDCWD, ".git/refs/heads/master", O_RDONLY) = 4
+read(4, "745d6b1747ed8b7060e85b88c8b0b5ff"..., 256) = 41
+read(4, "", 215)                        = 0
+close(4)                                = 0
+lstat(".git/refs/HEAD", 0x7ffec9c0f640) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/packed-refs", O_RDONLY) = -1 ENOENT (No such file or directory)
+lstat(".git/refs/tags/HEAD", 0x7ffec9c0f640) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0f370) = -1 ENOENT (No such file or directory)
+lstat(".git/refs/heads/HEAD", 0x7ffec9c0f640) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0f370) = -1 ENOENT (No such file or directory)
+lstat(".git/refs/remotes/HEAD", 0x7ffec9c0f640) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0f370) = -1 ENOENT (No such file or directory)
+lstat(".git/refs/remotes/HEAD/HEAD", 0x7ffec9c0f640) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0f370) = -1 ENOENT (No such file or directory)
+lstat("javascript/gittest.txt", {st_mode=S_IFREG|0644, st_size=19, ...}) = 0
+lstat(".git/HEAD", {st_mode=S_IFREG|0644, st_size=23, ...}) = 0
+openat(AT_FDCWD, ".git/HEAD", O_RDONLY) = 4
+read(4, "ref: refs/heads/master\n", 256) = 23
+read(4, "", 233)                        = 0
+close(4)                                = 0
+lstat(".git/refs/heads/master", {st_mode=S_IFREG|0644, st_size=41, ...}) = 0
+openat(AT_FDCWD, ".git/refs/heads/master", O_RDONLY) = 4
+read(4, "745d6b1747ed8b7060e85b88c8b0b5ff"..., 256) = 41
+read(4, "", 215)                        = 0
+close(4)                                = 0
+lstat(".git/refs/HEAD", 0x7ffec9c0ea50) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0e780) = -1 ENOENT (No such file or directory)
+lstat(".git/refs/tags/HEAD", 0x7ffec9c0ea50) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0e780) = -1 ENOENT (No such file or directory)
+lstat(".git/refs/heads/HEAD", 0x7ffec9c0ea50) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0e780) = -1 ENOENT (No such file or directory)
+lstat(".git/refs/remotes/HEAD", 0x7ffec9c0ea50) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0e780) = -1 ENOENT (No such file or directory)
+lstat(".git/refs/remotes/HEAD/HEAD", 0x7ffec9c0ea50) = -1 ENOENT (No such file or directory)
+stat(".git/packed-refs", 0x7ffec9c0e780) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/refs/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+fstat(4, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(4, /* 5 entries */, 32768)   = 136
+stat(".git/refs/tags", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat(".git/refs/heads", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat(".git/refs/remotes", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(4, /* 0 entries */, 32768)   = 0
+close(4)                                = 0
+stat(".git/packed-refs", 0x7ffec9c0eaa0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/objects/info/alternates", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/objects/pack", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+fstat(4, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(4, /* 2 entries */, 32768)   = 48
+getdents64(4, /* 0 entries */, 32768)   = 0
+close(4)                                = 0
+openat(AT_FDCWD, ".git/objects/74/5d6b1747ed8b7060e85b88c8b0b5ff04e2a841", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0444, st_size=159, ...}) = 0
+mmap(NULL, 159, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7f34fcf7d000
+close(4)                                = 0
+munmap(0x7f34fcf7d000, 159)             = 0
+brk(0x56254e8f7000)                     = 0x56254e8f7000
+openat(AT_FDCWD, ".git/objects/74/5d6b1747ed8b7060e85b88c8b0b5ff04e2a841", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0444, st_size=159, ...}) = 0
+mmap(NULL, 159, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7f34fcf7d000
+close(4)                                = 0
+munmap(0x7f34fcf7d000, 159)             = 0
+openat(AT_FDCWD, ".git/info/grafts", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/shallow", O_RDONLY) = -1 ENOENT (No such file or directory)
+mmap(NULL, 524288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f34fc622000
+openat(AT_FDCWD, ".git/objects/53/d31ae6447b6c6ecc84e799760345e701321df2", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0444, st_size=84, ...}) = 0
+mmap(NULL, 84, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7f34fcf7d000
+close(4)                                = 0
+munmap(0x7f34fcf7d000, 84)              = 0
+rt_sigaction(SIGALRM, {sa_handler=0x56254c72ddc0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcc6bd00}, NULL, 8) = 0
+setitimer(ITIMER_REAL, {it_interval={tv_sec=1, tv_usec=0}, it_value={tv_sec=1, tv_usec=0}}, NULL) = 0
+setitimer(ITIMER_REAL, {it_interval={tv_sec=0, tv_usec=0}, it_value={tv_sec=0, tv_usec=0}}, NULL) = 0
+rt_sigaction(SIGALRM, {sa_handler=SIG_IGN, sa_mask=[ALRM], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcac47e0}, {sa_handler=0x56254c72ddc0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f34fcc6bd00}, 8) = 0
+access("/home/sam/.config/git/ignore", R_OK) = -1 ENOENT (No such file or directory)
+access(".git/info/exclude", R_OK)       = 0
+openat(AT_FDCWD, ".git/info/exclude", O_RDONLY) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=240, ...}) = 0
+read(4, "# git ls-files --others --exclud"..., 240) = 240
+close(4)                                = 0
+openat(AT_FDCWD, ".", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+fstat(4, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(4, /* 5 entries */, 32768)   = 136
+openat(AT_FDCWD, ".gitignore", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "javascript/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 5
+fstat(5, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(5, /* 6 entries */, 32768)   = 184
+openat(AT_FDCWD, "javascript/.gitignore", O_RDONLY) = -1 ENOENT (No such file or directory)
+getdents64(5, /* 0 entries */, 32768)   = 0
+close(5)                                = 0
+openat(AT_FDCWD, "html_css/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 5
+fstat(5, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(5, /* 32 entries */, 32768)  = 1280
+openat(AT_FDCWD, "html_css/.gitignore", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "html_css/htmlcssexam/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 6
+fstat(6, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+brk(0x56254e91d000)                     = 0x56254e91d000
+getdents64(6, /* 10 entries */, 32768)  = 336
+getdents64(6, /* 0 entries */, 32768)   = 0
+brk(0x56254e915000)                     = 0x56254e915000
+close(6)                                = 0
+openat(AT_FDCWD, "html_css/portfolio/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 6
+fstat(6, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(6, /* 39 entries */, 32768)  = 1352
+getdents64(6, /* 0 entries */, 32768)   = 0
+close(6)                                = 0
+openat(AT_FDCWD, "html_css/internet_css_project/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 6
+fstat(6, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(6, /* 11 entries */, 32768)  = 360
+getdents64(6, /* 0 entries */, 32768)   = 0
+close(6)                                = 0
+openat(AT_FDCWD, "html_css/about_python_css/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 6
+fstat(6, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(6, /* 5 entries */, 32768)   = 160
+getdents64(6, /* 0 entries */, 32768)   = 0
+close(6)                                = 0
+openat(AT_FDCWD, "html_css/mediaQueries/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 6
+fstat(6, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+getdents64(6, /* 4 entries */, 32768)   = 120
+getdents64(6, /* 0 entries */, 32768)   = 0
+close(6)                                = 0
+getdents64(5, /* 0 entries */, 32768)   = 0
+brk(0x56254e90d000)                     = 0x56254e90d000
+close(5)                                = 0
+getdents64(4, /* 0 entries */, 32768)   = 0
+brk(0x56254e905000)                     = 0x56254e905000
+close(4)                                = 0
+stat(".git/MERGE_HEAD", 0x7ffec9c0f9f0) = -1 ENOENT (No such file or directory)
+stat(".git/rebase-apply", 0x7ffec9c0f8a0) = -1 ENOENT (No such file or directory)
+stat(".git/rebase-merge", 0x7ffec9c0f8a0) = -1 ENOENT (No such file or directory)
+stat(".git/CHERRY_PICK_HEAD", 0x7ffec9c0f9f0) = -1 ENOENT (No such file or directory)
+stat(".git/BISECT_LOG", 0x7ffec9c0f8a0) = -1 ENOENT (No such file or directory)
+stat(".git/REVERT_HEAD", 0x7ffec9c0f9f0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, ".git/sequencer/todo", O_RDONLY) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+unlink("/home/sam/CodingDojo/.git/index.lock") = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x4), ...}) = 0
+write(1, "On branch master\n", 17)      = 17
+lstat(".git/HEAD", {st_mode=S_IFREG|0644, st_size=23, ...}) = 0
+openat(AT_FDCWD, ".git/HEAD", O_RDONLY) = 3
+read(3, "ref: refs/heads/master\n", 256) = 23
+read(3, "", 233)                        = 0
+close(3)                                = 0
+lstat(".git/refs/heads/master", {st_mode=S_IFREG|0644, st_size=41, ...}) = 0
+openat(AT_FDCWD, ".git/refs/heads/master", O_RDONLY) = 3
+read(3, "745d6b1747ed8b7060e85b88c8b0b5ff"..., 256) = 41
+read(3, "", 215)                        = 0
+close(3)                                = 0
+lstat(".git/refs/heads/master", {st_mode=S_IFREG|0644, st_size=41, ...}) = 0
+openat(AT_FDCWD, ".git/refs/heads/master", O_RDONLY) = 3
+read(3, "745d6b1747ed8b7060e85b88c8b0b5ff"..., 256) = 41
+read(3, "", 215)                        = 0
+close(3)                                = 0
+write(1, "Changes not staged for commit:\n", 31) = 31
+write(1, "  (use \"git add <file>...\" to up"..., 61) = 61
+write(1, "  (use \"git checkout -- <file>.."..., 76) = 76
+write(1, "\n", 1)                       = 1
+write(1, "\t\33[31mmodified:   gittest.txt\33[m"..., 33) = 33
+write(1, "\n", 1)                       = 1
+write(1, "Untracked files:\n", 17)      = 17
+write(1, "  (use \"git add <file>...\" to in"..., 65) = 65
+write(1, "\n", 1)                       = 1
+write(1, "\t\33[31mnewtest.txt\33[m\n", 21) = 21
+write(1, "\t\33[31mst.out\33[m\n", 16)  = 16
+write(1, "\n", 1)                       = 1
+write(1, "no changes added to commit (use "..., 66) = 66
+fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x4), ...}) = 0
+close(1)                                = 0
+getpid()                                = 2971
+exit_group(0)                           = ?
++++ exited with 0 +++
