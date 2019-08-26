@@ -53,9 +53,31 @@ function countPositives(arr){
     }
     return arr
 }
-console.log(countPositives([-1,1,1,1]))
+//console.log(countPositives([-1,1,1,1]))
     // Evens and Odds - Create a function that accepts an array.  Every time that array has three odd values in a row, print "That's odd!".  Every time the array has three evens in a row, print "Even more so!".
-
+function evensAndOdds(arr){
+    var oddCounter = 0
+    var evenCounter = 0
+    for (i=0; i<arr.length; i++){
+        if (arr[i]%2==0){
+            evenCounter++
+            oddCounter=0
+        }
+        if (arr[i]%2==1){
+            oddCounter++
+            evenCounter=0
+        }
+        if(oddCounter==3){
+            console.log("That's odd!")
+            oddCounter=0
+        } 
+        if(evenCounter==3){
+            console.log("Even more so!")
+            evenCounter=0
+        }
+    }
+}
+//evensAndOdds([1,2,3,33,71,4,5,6,882,16,7])
     // Increment the Seconds - Given an array of numbers arr, add 1 to every other element, specifically those whose index is odd (arr[1], arr[3], arr[5], etc).  Afterward, console.log each array value and return arr.
 
     // Previous Lengths - You are passed an array (similar to saying 'takes in an array' or 'given an array') containing strings.  Working within that same array, replace each string with a number - the length of the string at the previous array index - and return the array.  For example, previousLengths(["hello", "dojo", "awesome"]) should return ["hello", 5, 4]. Hint: Can for loops only go forward?
@@ -71,3 +93,10 @@ console.log(countPositives([-1,1,1,1]))
     // Swap Toward the Center - Given an array, swap the first and last values, third and third-to-last values, etc.  Example: swapTowardCenter([true,42,"Ada",2,"pizza"]) turns the array into ["pizza", 42, "Ada", 2, true].  swapTowardCenter([1,2,3,4,5,6]) turns the array into [6,2,4,3,5,1].  No need to return the array this time.
 
     // Scale the Array - Given an array arr and a number num, multiply all values in the array arr by the number num, and return the changed array arr.  For example, scaleArray([1,2,3], 3) should return [3,6,9].
+function scaleArray(arr, num){
+    for (i=0; i<arr.length; i++){
+        arr[i]=arr[i]*num
+    }
+    return arr
+}
+console.log(scaleArray([1,2,3], 3))
