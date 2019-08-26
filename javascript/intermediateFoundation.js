@@ -24,20 +24,69 @@ function fibonacci(index){
 	for(i=2;i<=index;i++){
 		fibarr[i] = fibarr[i-1] + fibarr[i-2]
 	}
-	// console.log(fibarr);
 	return fibarr[index]
 }
-//console.log(fibonacci(20));
+//console.log(fibonacci(1000));
+
+	//Bonus: Fibonacci with recursion!
+function fib(num){
+	if(num<=1){
+		return num
+	}
+	return(fib(num-1)+fib(num-2))
+}
+//console.log(fib(10))
 
     // Array: Second-to-Last: Return the second-to-last element of an array. Given [42, true, 4, "Liam", 7], return "Liam".  If array is too short, return null.
 function secondToLast(arr){
-	return arr[arr.length-2]
+	if (arr.length>1){
+		return arr[arr.length-2]
+	}
+	else{
+		return null
+	}
 }
-console.log(secondToLast([1]))
+//console.log(secondToLast([1,2]))
 
     // Array: Nth-to-Last: Return the element that is N-from-array's-end.  Given ([5,2,3,6,4,9,7],3), return 4.  If the array is too short, return null.
+function secondToLast(arr, num){
+	if (arr.length>=num){
+		return arr[arr.length-num]
+	}
+	else{
+		return null
+	}
+}
+//console.log(secondToLast([1,2,4,5,6,7,8,9], 8))
 
     // Array: Second-Largest: Return the second-largest element of an array. Given [42,1,4,3.14,7], return 7.  If the array is too short, return null.
+function secondLargest(arr){
+	largest = arr[0]
+	secLargest = Number.NEGATIVE_INFINITY
+	if (arr.length<2){
+		return null;
+	}
+	else{
+		for (i=1; i<arr.length; i++){
+			if (arr[i] > largest){
+				largest = arr[i]
+			}
+		}
+		for (i=0; i<arr.length; i++){
+			if (arr[i] < largest && secLargest < arr[i]){
+				secLargest = arr[i]
+			}
+		}
+	}
+return secLargest
+}
+//console.log(secondLargest([42,1,4,3.14,7]))
 
     // Double Trouble: Create a function that changes a given array to list each existing element twice, retaining original order.  Convert [4, "Ulysses", 42, false] to [4,4, "Ulysses", "Ulysses", 42, 42, false, false].
-    
+function doubleTrouble(arr){
+	for(i=0; i<arr.length; i+=2){
+		arr.splice(i,0,arr[i])
+	}
+	return arr
+}
+console.log(doubleTrouble([1,2,3,4,5]))
