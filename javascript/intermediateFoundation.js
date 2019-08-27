@@ -104,7 +104,7 @@ function otherSecondLargest(arr){
 	return secLargest
 
 }
-console.log(otherSecondLargest([42,1000,50,43,100,4,3.14,7]))
+//console.log(otherSecondLargest([42,1000,50,43,100,4,3.14,7]))
 
 
     // Double Trouble: Create a function that changes a given array to list each existing element twice, retaining original order.  Convert [4, "Ulysses", 42, false] to [4,4, "Ulysses", "Ulysses", 42, 42, false, false].
