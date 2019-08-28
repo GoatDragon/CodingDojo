@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Disappering Ninja</title>
+	<style type="text/css">
+		div.ninjas{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('img').click(function(){
+				$(this).hide()
+			});
+			$('button').click(function(){
+				$('img').show()
+			})
+		});
+	</script>
+</head>
+<body>
+	<div class='ninjas'>
+		<img src="ninja.gif">
+		<img src="ninja.gif">
+		<img src="ninja.gif">
+		<img src="ninja.gif">
+		<img src="ninja.gif">
+		<img src="ninja.gif">
+		<img src="ninja.gif">
+		<img src="ninja.gif">
+	</div>
+	<button>restore ninjas</button>
+</body>
+</html>
