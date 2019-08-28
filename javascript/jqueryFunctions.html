@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jquery test</title>
+	<style type="text/css">
+		*{
+			/*outline: solid red 1px;*/
+			font-family: sans-serif;
+		}
+		div.feature{
+			display: grid;
+			grid-template-columns: 1fr 3fr;
+			height: 75px;
+		}
+		div.twoButtons{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			height: 75px;
+		}
+		h1{
+			justify-self: center;
+		}
+		button{
+			margin:3px;
+		}
+		/*part of add class and remove class*/
+		.red{
+			background-color: red;
+		}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// hide and show
+			$('.hide').click(function(){
+				$('.hideNShow').hide()
+			});		
+			$('.show').click(function(){
+				$('.hideNShow').show()
+			});
+			// show/hide toggle
+			$('.toggle').click(function(){
+				$('.toggled').toggle()
+			});
+			// slide up and slide down
+			$('.slideUp').click(function(){
+				$('.slider').slideUp()
+			});		
+			$('.slideDown').click(function(){
+				$('.slider').slideDown()
+			});
+			// slide up/down toggle
+			$('.slideToggle').click(function(){
+				$('.toggledSlider').slideToggle()
+			});
+			// fade in and fade out
+			$('.fadeIn').click(function(){
+				$('.fader').fadeIn()
+			});		
+			$('.fadeOut').click(function(){
+				$('.fader').fadeOut()
+			});
+			// add class and remove class
+			$('.addClass').click(function(){
+				$('body').addClass('red')
+			});
+			$('.removeClass').click(function(){
+				$('body').removeClass('red')
+			})
+			// before, after, append and preped
+			$('.before').click(function(){
+				$('.center').before('General ')
+			});
+			$('.after').click(function(){
+				$('.center').after('Kenobi ')
+			});
+			$('.append').click(function(){
+				$('.center').append(' there')
+			});
+			$('.prepend').click(function(){
+				$('.center').prepend('there ')
+			});
+			// HTML and text
+			$('.html').click(function(){
+				$('.content').html('<p>text in a p tag</p>')
+			});
+			$('.text').click(function(){
+				$('.content').text('<p>text in a p tag</p>')
+			});
+			// val
+			function displayVal(){
+				let theVal = $('.getVal').val()
+				$('.doVal').text(theVal)
+				console.log('ran')
+			}
+			$('.doVal').click(displayVal())
+
+		});
+	</script>
+</head>
+<body>
+	<!-- hide and show -->
+	<div class='feature'>
+		<div class='twoButtons'>
+			<button class='hide'>Hidey Button</button>
+			<button class='show'>Come Back!</button>
+		</div>
+		<h1 class='hideNShow'>Hide and Show</h1>
+	</div>
+	<hr>
+	<!-- show/hide toggle -->
+	<div class='feature'>
+		<button class='toggle'>Toggle</button>
+		<h1 class='toggled'>Toggle me!</h1>
+	</div>
+	<hr>
+	<!-- slide up and slide down -->
+	<div class='feature'>
+		<div class='twoButtons'>
+			<button class='slideUp'>Slide Up</button>
+			<button class='slideDown'>Slide Down</button>
+		</div>
+		<h1 class='slider'>See how I slide!</h1>
+	</div>
+	<hr>
+	<!-- slide up/down toggle -->
+	<div class='feature'>
+		<button class='slideToggle'>Slide Toggle</button>
+		<h1 class='toggledSlider'>Toggle me, watch me slide!</h1>
+	</div>
+	<hr>
+	<!-- fade in and fade out -->
+	<div class='feature'>
+		<div class='twoButtons'>
+			<button class='fadeOut'>Fade Out</button>
+			<button class='fadeIn'>Fade In</button>
+		</div>
+		<h1 class='fader'>See how I fade!</h1>
+	</div>
+	<hr>
+	<!-- add class and remove class-->
+	<div class='feature'>
+		<div class='twoButtons'>
+			<button class='addClass'>Add Class</button>
+			<button class='removeClass'>Remove Class</button>
+		</div>
+		<h1>Ooooh what does <em>this</em> button do??</h1>
+	</div>
+	<hr>
+	<!-- before, after, append and preped -->
+	<div class='feature'>
+		<div class='twoButtons'>
+			<button class='append'>Append</button>
+			<button class='prepend'>Prepend</button>
+			<button class='before'>Before</button>
+			<button class='after'>After</button>
+		</div>
+		<h1 class='center'>Hello</h1>
+	</div>
+	<hr>
+	<!-- HTML and text -->
+	<div class='feature'>
+		<div class='twoButtons'>
+			<button class='html'>HTML</button>
+			<button class='text'>Text</button>
+		</div>
+		<h1 class='content'>Surprise!</h1>
+	</div>
+	<hr>
+	<!-- var -->
+	<div class='feature'>
+		<select id="getVal">
+ 			<option>One thing</option>
+  			<option>The other thing!</option>
+		</select>
+		<h1 class='doVal'> hi</h1>
+	</div>
+</body>
+</html>     
