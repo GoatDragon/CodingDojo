@@ -90,12 +90,16 @@
 				$('.content').text('<p>text in a p tag</p>')
 			});
 			// val
-			function displayVal(){
+			// function displayVal(){
+			// 	let theVal = $('.getVal').val()
+			// 	$('.doVal').text(theVal)
+			// 	console.log('ran')
+			// }
+			$('.getVal').click(function(){
 				let theVal = $('.getVal').val()
 				$('.doVal').text(theVal)
 				console.log('ran')
-			}
-			$('.doVal').click(displayVal())
+			})
 
 		});
 	</script>
@@ -171,11 +175,11 @@
 	<hr>
 	<!-- var -->
 	<div class='feature'>
-		<select id="getVal">
+		<select class="getVal">
  			<option>One thing</option>
   			<option>The other thing!</option>
 		</select>
-		<h1 class='doVal'> hi</h1>
+		<h1 class='doVal'>Something</h1>
 	</div>
 </body>
 </html>     
