@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ninja to Cat</title>
+	<style type="text/css">
+		body{
+			display:grid;
+			grid-template-columns: 1fr;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#c0').click(function(){
+				let pic = $('#c0').attr('src')
+				if(pic == 'ninja0.png'){
+					$('#c0').attr('src', 'cat0.png')
+				}
+				else{
+					$('#c0').attr('src', 'ninja0.png')
+				}
+			})			
+			$('#c1').click(function(){
+				let pic = $('#c1').attr('src')
+				if(pic == 'ninja1.png'){
+					$('#c1').attr('src', 'cat1.png')
+				}
+				else{
+					$('#c1').attr('src', 'ninja1.png')
+				}
+				
+			})			
+			$('#c2').click(function(){
+				let pic = $('#c2').attr('src')
+				if(pic == 'ninja2.png'){
+					$('#c2').attr('src', 'cat2.png')
+				}
+				else{
+					$('#c2').attr('src', 'ninja2.png')
+				}
+			})			
+			$('#c3').click(function(){
+				let pic = $('#c3').attr('src')
+				if(pic == 'ninja3.png'){
+					$('#c3').attr('src', 'cat3.png')
+				}
+				else{
+					$('#c3').attr('src', 'ninja3.png')
+				}
+			$('#c4').click(function(){
+				let pic = $('#c4').attr('src')
+				if(pic == 'ninja4.png'){
+					$('#c4').attr('src', 'cat4.png')
+				}
+				else{
+					$('#c4').attr('src', 'ninja4.png')
+				}
+				
+			})			
+
+			});		
+		});
+
+	</script>
+
+</head>
+<body>
+	<img id="c0" src="ninja0.png">
+	<img id="c1" src="ninja1.png">
+	<img id="c2" src="ninja2.png">
+	<img id="c3" src="ninja3.png">
+	<img id="c4" src="ninja4.png">
+</body>
+</html>
