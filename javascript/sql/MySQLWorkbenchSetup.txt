@@ -1,0 +1,8 @@
+INSERT INTO table_name (column_name1, column_name2) 
+VALUES('column1_value', 'column2_value');
+
+SELECT column_name1, column_name2 FROM table_name;
+
+UPDATE table_name SET column_name1 = 'some_value', column_name2='another_value' WHERE condition(s);
+
+DELETE FROM table_name WHERE condition(s)

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid Test</title>
+	<style type="text/css">
+		body{
+			display: grid;
+		}
+		div{
+			height:400px;
+		}
+		.g1{
+			background-color: red;
+		}
+		.g2{
+			background-color: blue;
+		}
+		@media only screen and (min-width: 701px){
+			body{
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+		@media only screen and (max-width: 700px){
+			body{
+				grid-template-columns: 1fr;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class = 'g2'>
+		
+	</div>
+	<div class='g1'>
+		
+	</div>
+</body>
+</html>
