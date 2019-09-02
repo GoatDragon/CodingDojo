@@ -60,4 +60,4 @@ def flexCounter(lowNum, highNum, mult):
             print(i)
 
 
-# flexCounter(1,100,7)
+# flexCounter(1, 100, 7)
