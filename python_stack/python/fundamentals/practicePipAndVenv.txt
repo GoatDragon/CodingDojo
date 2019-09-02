@@ -1,0 +1,19 @@
+pip list -- lists installed modules - possibly in python 2
+
+deactivate -- exits currently running venv
+
+pip3 list -- lists installed modules in specifically python 3
+
+source myEnvidonments/py3Env/bin/activate -- enters that venv
+
+pip install Django==1.11.9 -- installs Django version 11.11.9 to current working environment
+
+pip freeze -- optputs installed packages as requirements to reproduce current state
+
+pip freeze > requirements.txt -- creates a text file in pwd with output of pip freeze command
+
+pip uninstall Django -- uninstalls Django in current venv
+
+pip show Django -- shows details about Django, but only if it is currently installed
+
+pip search Flask -- shows all available packages including the string Flask
