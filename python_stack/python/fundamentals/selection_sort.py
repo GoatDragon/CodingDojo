@@ -14,7 +14,7 @@ def selection_sort(a_list):
     return the_list
 
 
-# print("final list:", selection_sort(the_list))
+print("final list:", selection_sort(the_list))
 
 
 # a more "pythonic" method from google search
@@ -28,7 +28,7 @@ def pythonic_selection_sort(sort_list):
     print('\n')
 
 
-pythonic_selection_sort(the_list)
+# pythonic_selection_sort(the_list)
 
 
 # the function I wrote with test prints in place:
