@@ -1,5 +1,2 @@
-def countdown(num):
-    return list(reversed(range(num + 1)))
-
-
-print(countdown(80))
+lst = [1,2,3,4,5]
+print(lst.first())
