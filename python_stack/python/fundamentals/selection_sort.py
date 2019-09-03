@@ -1,7 +1,7 @@
-the_list = [6, 5, 3, 1, 8, 7, 2, 4]
-print("original list:", the_list)
+import sys
 
-#the function I wrote
+
+# the selection sort function I wrote:
 def selection_sort(a_list):
     for j in range(len(a_list)):
         min_val = a_list[j]
@@ -10,14 +10,43 @@ def selection_sort(a_list):
             if a_list[i] < min_val:
                 min_val = a_list[i]
                 min_index = i
-        the_list[min_index], the_list[j] = the_list[j], the_list[min_index]
-    return the_list
+        a_list[min_index], a_list[j] = a_list[j], a_list[min_index]
+    return a_list
 
 
-print("final list:", selection_sort(the_list))
+# call selection sort on list defined inside program
+# the_list = [9, 6, 5, 3, 1, 10, 8, 7, 2, 4]
+# print(selection_sort(the_list))
 
 
-# a more "pythonic" method from google search
+# functional method for cleaning input from terminal
+def format_list(terminal_input):
+    clean_list = []
+    number = ''
+    for character in terminal_input:
+        if character != ",":
+            number += character
+        else:
+            clean_list.append(int(number))
+            number = ''
+    return clean_list
+
+
+# call selection sort on cleaned terminal input
+print(selection_sort(format_list(sys.argv[1])))
+
+
+# original method for cleaning input
+# a = sys.argv[1].split(',')
+# def coerce(num):
+#     return int(num)
+# b = list(map(coerce, a))
+
+
+# functions below not relevant to the operation of functions above
+
+
+# a more "pythonic" method from google search:
 def pythonic_selection_sort(sort_list):
     for j in range(len(sort_list)):
         smallest_element = min(sort_list[j:])
@@ -45,9 +74,9 @@ def selection_sort_with_prints(a_list):
                 min_index = i
                 print("min value of:", min_val, "found at index:", min_index)
         print("min value:", min_val, "at index:", min_index)
-        the_list[min_index], the_list[j] = the_list[j], the_list[min_index]
-        print("current list:", the_list)
-    return the_list
+        a_list[min_index], a_list[j] = a_list[j], a_list[min_index]
+        print("current list:", a_list)
+    return a_list
 
 
 # print("final list:", selection_sort_with_prints(the_list))
