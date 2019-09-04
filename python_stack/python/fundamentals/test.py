@@ -1,2 +1,3 @@
-lst = [1,2,3,4,5]
-print(lst.first())
+lst = ['a', 'b', 'c', 'd']
+for dog in lst:
+    print(dog, lst.index('c'))

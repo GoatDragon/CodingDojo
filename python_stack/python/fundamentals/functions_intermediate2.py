@@ -38,7 +38,7 @@ def iterate_dictionary():
             print(f"first_name - {student['first_name']}, last_name - {student['last_name']}")
 
 
-# iterate_dictionary()
+iterate_dictionary()
 
 
 # should output: (it's okay if each key-value pair ends up on 2 separate lines;
@@ -73,7 +73,7 @@ def print_info(some_dictionary):
         print()
 
 
-print_info(dojo)
+# print_info(dojo)
 # output:
 # 7 LOCATIONS
 # San Jose

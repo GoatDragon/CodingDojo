@@ -6,5 +6,6 @@ def bubble_sort(some_list):
     return some_list
 
 
-the_list = [6, 5, 3, 1, 8, 7, 2, 4]
+# the_list = [6, 5, 3, 1, 8, 7, 2, 4]
+the_list = list(reversed(range(10000)))
 print(bubble_sort(the_list))

@@ -3,8 +3,14 @@
 def countdown(num):
     return list(reversed(range(num + 1)))
 
+def countdown2(num):
+    lst = []
+    for i in range(num, -1, -1):
+        lst.append(i)
+    return lst
 
-# print(countdown(80))
+
+print(countdown2(27))
 
 
     # Print and Return - Create a function that will receive a list with two numbers. Print the first value and return the second.

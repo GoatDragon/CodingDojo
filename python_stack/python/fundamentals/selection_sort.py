@@ -16,7 +16,8 @@ def selection_sort(a_list):
 
 # call selection sort on list defined inside program
 # the_list = [9, 6, 5, 3, 1, 10, 8, 7, 2, 4]
-# print(selection_sort(the_list))
+the_list = list(reversed(range(1000)))
+print(selection_sort(the_list))
 
 
 # functional method for cleaning input from terminal
@@ -24,16 +25,18 @@ def format_list(terminal_input):
     clean_list = []
     number = ''
     for character in terminal_input:
-        if character != ",":
+        if character != "," and character:
             number += character
         else:
             clean_list.append(int(number))
             number = ''
+    if number.isdigit():
+        clean_list.append(int(number))
     return clean_list
 
 
 # call selection sort on cleaned terminal input
-print(selection_sort(format_list(sys.argv[1])))
+# print(selection_sort(format_list(sys.argv[1])))
 
 
 # original method for cleaning input
