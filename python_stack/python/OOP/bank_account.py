@@ -21,8 +21,8 @@ class BankAccount:
         return self
 
 
-act1 = BankAccount("account 1", 0.02, 1000)
-act2 = BankAccount("account 2", 0.05, 100)
+acc1 = BankAccount("account 1", 0.02, 1000)
+acc2 = BankAccount("account 2", 0.05, 100)
 
-act1.deposit(10).deposit(20).deposit(30).withdraw(5).yield_interest().display_account_info()
-act2.deposit(100).deposit(200).withdraw(10).withdraw(20).withdraw(50).withdraw(70).yield_interest().display_account_info()
+acc1.deposit(10).deposit(20).deposit(30).withdraw(5).yield_interest().display_account_info()
+acc2.deposit(100).deposit(200).withdraw(10).withdraw(20).withdraw(50).withdraw(70).yield_interest().display_account_info()
