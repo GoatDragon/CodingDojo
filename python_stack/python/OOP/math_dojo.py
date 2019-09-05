@@ -12,9 +12,10 @@ class MathDojo:
             self.result -= num
         return self
 
+
 md = MathDojo()
 
 # x = md.add(2).add(2, 5, 1).subtract(3, 2).result
 # print(x)
 
-print(md.add(10, 10, 10, 10, 10).subtract(1, 1, 1, 1, 1).result)
+print(md.add(5 * 9).subtract(1, 2, 3).result)
