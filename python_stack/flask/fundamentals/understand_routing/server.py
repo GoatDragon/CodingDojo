@@ -19,12 +19,13 @@ def say(name):
 
 @app.route('/repeat/<num>/<word>')
 def repeat(num, word):
-    return (str(word)+" ") * int(num)
+    return (str(word) + " ") * int(num)
 
 
 @app.route('/<path:path>')
 def catch_all(path):
     return "Sorry! No response. Try again."
+
 
 if __name__ == "__main__":
     app.run(debug=True)
