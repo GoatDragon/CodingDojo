@@ -7,6 +7,12 @@ body{
 }
 label, h1{
     color: white;
+    
+}
+a{
+    text-decoration: none;
+    color: blue;
+
 }
 div{
     background-color: #6318BF;

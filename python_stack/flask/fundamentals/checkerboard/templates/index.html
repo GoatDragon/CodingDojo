@@ -2,12 +2,22 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
     <meta charset="utf-8">
     <title>Checkerboard</title>
 </head>
 <body>
-    <div id="board">
-        
-    </div>
+    <table>
+        {% for i in range(rows): %}
+        <tr>
+            {% for j in range(columns) %}
+            <td class="c{{ (i+j)%2 }}"></td>
+            {% endfor%}
+        </tr>
+        {% endfor %}
+    </table>
+    <script>
+        setColors("{{ c0 }}", "{{ c1 }}");
+    </script>
 </body>
 </html>

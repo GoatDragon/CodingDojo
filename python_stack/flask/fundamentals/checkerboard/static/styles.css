@@ -1,8 +1,14 @@
+
 body{
-    background-color: #2B2B2B;
+    background-color: #4D4D4D;
 }
-div{
-    background-color: #6318BF;
-    height:100px;
+tr, td{
+    height: 100px;
     width: 100px;
+}
+.c0{
+    background: black;
+}
+.c1{
+    background: white;
 }
