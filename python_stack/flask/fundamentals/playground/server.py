@@ -21,5 +21,6 @@ def number(x):
 def color(x, color):
     return render_template("index.html", num=int(x), color=color)
 
+
 if __name__ == "__main__":
     app.run(debug=True)
