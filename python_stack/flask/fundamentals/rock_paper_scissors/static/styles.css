@@ -1,0 +1,15 @@
+*{
+    font-family: sans-serif;
+}
+body{
+    background-color: #2B2B2B;
+    display: grid;
+}
+label, h1{
+    color: white;
+}
+div{
+    background-color: #6318BF;
+    height:100px;
+    width: 100px;
+}

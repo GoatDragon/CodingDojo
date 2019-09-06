@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <form action="/choice" method="POST">
+        <label>rock</label>
+        <input type="radio" name="choice" value="0" required>
+        <label>paper</label>
+        <input type="radio" name="choice" value="1">
+        <label>sissors</label>
+        <input type="radio" name="choice" value="2">
+        <input type="submit" name="Go!">
+    </form>
+</body>
+</html>
