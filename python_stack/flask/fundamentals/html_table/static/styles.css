@@ -4,6 +4,6 @@ body{
 th, td{
     color: white;
 }
-table{
-    width: 50px;
+table.table{
+    width: 1000px;
 }
