@@ -38,10 +38,6 @@ textarea, select, span{
 h3{
     text-decoration: underline;
 }
-/*div#results{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}*/
 button{
     width: 6rem;
     grid-column:2/3;
