@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="tripplec">
+        <a id='home' href="/"><img id='home' src="{{ url_for('static', filename='home.png') }}" alt=""></a>
+        <h1>Add New User</h1>
+    </div>
+    <div id="singlec">
+        <form action="/users/add/" method="POST">
+            <p>First Name</p>
+            <input type="text" name="firstname" placeholder="first name">
+            <p>Last Name</p>
+            <input type="text" name="lastname" placeholder="last name">
+            <p>Email</p>
+            <input type="text" name="email" placeholder="email">
+            <input id="submit_button" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

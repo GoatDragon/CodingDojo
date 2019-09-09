@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="tripplec">
+        <a id='home' href="/"><img id='home' src="{{ url_for('static', filename='home.png') }}" alt=""></a>
+        <h1>All Users</h1>
+    </div>
+    <div id="singlec">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            {% for user in all_users %}
+                <tr>
+                    <td>{{ user['id'] }}</td>
+                    <td>{{ user['first_name'] }} {{ user['last_name'] }} </td>
+                    <td>{{ user['email'] }}</td>
+                    <td>{{ user['created_at'] }}</td>
+                    <td><a href="/users/show/{{ user['id'] }}/">Show</a> | <a href="/users/edit/{{ user['id'] }}">Edit</a> | <a href="/users/delete/{{ user['id'] }}">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a class="add_user" href="/users/new">Add New User</a>
+    </div>
+</body>
+</html>

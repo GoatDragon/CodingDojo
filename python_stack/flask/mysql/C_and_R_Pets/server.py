@@ -25,7 +25,7 @@ def add_pet_to_db():
 @app.route('/delete', methods=["POST"])
 def delete_pet():
     mysql = connectToMySQL('pets')
-    query = f"DELETE FROM pets WHERE id = %(f_id)s"
+    query = "DELETE FROM pets WHERE id = %(f_id)s"
     data = {
         "f_id": request.form["id"]
     }

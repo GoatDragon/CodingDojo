@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="tripplec">
+        <a id='home' href="/"><img id='home' src="{{ url_for('static', filename='home.png') }}" alt=""></a>
+        <h1>Show User</h1>
+    </div>
+    <div id="singlec">
+        <table>
+            <tr>
+                <td>First name</td>
+                <td>{{ user[0]['first_name'] }}</td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td>{{ user[0]['last_name'] }}</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>{{ user[0]['email'] }}</td>
+            </tr>
+            <tr>
+                <td>created at</td>
+                <td>{{ user[0]['created_at'] }}</td>
+            </tr>
+            <tr>
+                <td>modified at</td>
+                <td>{{ user[0]['updated_at'] }}</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>
