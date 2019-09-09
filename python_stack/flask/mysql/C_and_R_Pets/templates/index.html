@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C & R Pets</title>
+</head>
+<body>
+    <h1>Add a pet</h1>
+    <form action="/create_pet" method="POST">
+        <p>Name: <input type="text" name="name"></p>
+        <p>Type: <input type="text" name="type"></p>
+        <input type="submit" value="Add pet">
+    </form>
+    <h1>Delete a pet</h1>
+    <form action="/delete" method="POST">
+        <p>pet ID: <input type="text" name="id"></p>
+        <input type="submit" value="DELETE">
+    </form>
+    <h1>All My pets</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+    {% for one_pet in all_pets %}
+        <tr>
+            <td>{{one_pet["id"]}}</td>
+            <td>{{one_pet["name"]}}</td>
+            <td>{{one_pet["type"]}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
