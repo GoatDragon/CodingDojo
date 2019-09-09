@@ -1,0 +1,14 @@
+mispelled database name:
+pymysql.err.InternalError: (1049, "Unknown database 'woorld'")
+
+mispelled table name:
+False
+
+wrong database password:
+pymysql.err.InternalError: (1698, "Access denied for user 'root'@'localhost'")
+
+wrong database login name:
+pymysql.err.OperationalError: (1045, "Access denied for user 'rodot'@'localhost' (using password: YES)")
+
+wrong charset in connection file:
+AttributeError: 'NoneType' object has no attribute 'encoding'
