@@ -9,7 +9,7 @@ gold_values = {
     'farm': [-10, 20],
     'cave': [-5, 100],
     'house': [-1, 5],
-    'casino': [-50, 50]
+    'casino': [-100, 50]
 }
 
 
