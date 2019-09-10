@@ -27,16 +27,16 @@ h1{
     color: white;
     width: 20rem;
     text-align: center;
-    /*border: .2rem solid black;*/
     border-radius: 1rem;
     padding: 1rem;
 }
 table{
-    border: 1px solid black;
+    border: solid black .5rem;
     width: 100%;
     border-collapse: collapse;
 }
 td, th{
+    text-align: center;
     border: 1px solid black;
     padding: .5rem;
 }
@@ -70,6 +70,7 @@ form{
     grid-row-gap: .5rem;
     background-color: black;
     padding: 2rem;
+    border: solid #7500AF .5rem;
     border-radius: 1rem
 
 }
@@ -80,4 +81,35 @@ p{
 }
 #submit_button{
     margin: 1rem 0 0 0;
+    background-color: #B4B4B4;
+    border-radius: 1rem;
+    border: solid #7500AF .2rem;
+}
+a{
+    color: blue;
+    text-decoration: none;
+}
+table.show{
+    width: 20%;
+    border: solid black .5rem;
+}
+table.show tr th{
+    text-align: right;
+    padding: .5rem;
+}
+table.show tr td{
+    text-align: left;
+
+}
+p.error_flash{
+    color: red;
+    padding-bottom: .2rem;
+}
+p.success_flash{
+    color: green;
+    padding-bottom: .2rem;
+}
+p.flash{
+    padding-bottom: .2rem;
+
 }

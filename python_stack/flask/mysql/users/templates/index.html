@@ -9,6 +9,11 @@
         <a id='home' href="/"><img id='home' src="{{ url_for('static', filename='home.png') }}" alt=""></a>
         <h1>All Users</h1>
     </div>
+    {% if get_flashed_messages() %}
+        {% for message in get_flashed_messages() %}
+            <p class="flash">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
     <div id="singlec">
         <table>
             <thead>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Control Panel</title>
+    <title>{{ user[0]['first_name'] }} {{ user[0]['last_name'] }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -10,25 +10,30 @@
         <h1>Show User</h1>
     </div>
     <div id="singlec">
-        <table>
+        {% if get_flashed_messages() %}
+            {% for message in get_flashed_messages() %}
+                <p class="success_flash">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <table class="show">
             <tr>
-                <td>First name</td>
+                <th>First Name</th>
                 <td>{{ user[0]['first_name'] }}</td>
             </tr>
             <tr>
-                <td>Last name</td>
+                <th>Last Name</th>
                 <td>{{ user[0]['last_name'] }}</td>
             </tr>
             <tr>
-                <td>email</td>
+                <th>Email</th>
                 <td>{{ user[0]['email'] }}</td>
             </tr>
             <tr>
-                <td>created at</td>
+                <th>Created</th>
                 <td>{{ user[0]['created_at'] }}</td>
             </tr>
             <tr>
-                <td>modified at</td>
+                <th>Last Modified</th>
                 <td>{{ user[0]['updated_at'] }}</td>
             </tr>
         </table>

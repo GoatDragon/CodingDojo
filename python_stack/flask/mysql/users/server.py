@@ -1,11 +1,15 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 from mysqlconnection import connectToMySQL
+import re
 app = Flask(__name__)
+app.secret_key = "password"
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 
 @app.route('/')
 def go_home():
     return redirect('/users/')
+
 
 @app.route('/users/')
 def all_users():
@@ -21,15 +25,28 @@ def new_user():
 
 @app.route('/users/add/', methods=["POST"])
 def add_user():
-    db = connectToMySQL('users_project')
-    query = "INSERT INTO users(first_name, last_name, email, created_at, updated_at) VALUES(%(f)s, %(l)s, %(e)s, NOW(), NOW())"
+    valid = True
+    if len(request.form["firstname"]) < 2:
+        valid = False
+        flash("first name too short")
+    if len(request.form["lastname"]) < 2:
+        valid = False
+        flash("last name too short")
+    if not EMAIL_REGEX.match(request.form["email"]):
+        valid = False
+        flash("invalid email address")
+    if not valid:
+        return redirect('/users/new')
     data = {
         "f": request.form["firstname"],
         "l": request.form["lastname"],
         "e": request.form["email"]
     }
+    db = connectToMySQL('users_project')
+    query = "INSERT INTO users(first_name, last_name, email, created_at, updated_at) VALUES(%(f)s, %(l)s, %(e)s, NOW(), NOW())"
     the_user = db.query_db(query, data)
-    return redirect('/users/show/'+str(the_user))
+    flash("User Added Successfully")
+    return redirect('/users/show/' + str(the_user))
 
 
 @app.route('/users/edit/<userid>')
@@ -42,8 +59,21 @@ def edit_user(userid):
     the_user = db.query_db(query, data)
     return render_template('edit_user.html', user=the_user)
 
+
 @app.route('/users/edit/<userid>/confirm', methods=["POST"])
 def confirm_edit(userid):
+    valid = True
+    if len(request.form["firstname"]) < 2:
+        valid = False
+        flash("first name too short")
+    if len(request.form["lastname"]) < 2:
+        valid = False
+        flash("last name too short")
+    if not EMAIL_REGEX.match(request.form["email"]):
+        valid = False
+        flash("invalid email address")
+    if not valid:
+        return redirect('/users/edit/' + str(userid))
     db = connectToMySQL('users_project')
     query = "UPDATE users SET first_name=%(f)s, last_name=%(l)s, email=%(e)s, updated_at=NOW() WHERE id=%(id)s"
     data = {
@@ -52,8 +82,10 @@ def confirm_edit(userid):
         "l": request.form["lastname"],
         "e": request.form["email"]
     }
-    the_user = db.query_db(query, data)
-    return redirect ('/')
+    db.query_db(query, data)
+    print("the USER", data["id"])
+    flash("User Updated Successfully")
+    return redirect('/users/show/' + data["id"])
 
 
 @app.route('/users/show/<userid>/')
@@ -74,7 +106,8 @@ def delete_user(userid):
     data = {
         "id": userid
     }
-    the_user = db.query_db(query, data)
+    db.query_db(query, data)
+    flash(f"User {userid} Deleted")
     return redirect('/users/')
 
 

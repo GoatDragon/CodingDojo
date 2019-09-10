@@ -10,6 +10,11 @@
         <h1>Add New User</h1>
     </div>
     <div id="singlec">
+        {% if get_flashed_messages() %}
+            {% for message in get_flashed_messages() %}
+                <p class="error_flash">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
         <form action="/users/add/" method="POST">
             <p>First Name</p>
             <input type="text" name="firstname" placeholder="first name">

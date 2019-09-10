@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Control Panel</title>
+    <title>Edit User</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -10,6 +10,11 @@
         <h1>Edit User</h1>
     </div>
     <div id="singlec">
+        {% if get_flashed_messages() %}
+            {% for message in get_flashed_messages() %}
+                <p class="error_flash">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
         <form action="/users/edit/{{ user[0]['id'] }}/confirm" method="POST">
             <p>First Name</p>
             <input type="text" name="firstname" value="{{ user[0]['first_name'] }}">
