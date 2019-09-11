@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Registration Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Login and Registration</h1>
+    {% if get_flashed_messages() %}
+        {% for message in get_flashed_messages() %}
+            <p class="flash">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <div class="twocolumn">
+        <h2>Register</h2>
+        <h2>Log In</h2>
+        <form action="/register" id="register" method="POST">
+            <p>User Name</p>
+            <input type="text" name="username" placeholder="user name" value="{{ user_name }}">
+            <p>Email:</p>
+            <input type="text" name="email" placeholder="email" value={{ email }}>
+            <p>Password:</p>
+            <input type="password" name="password" placeholder="password"> 
+            <p>Confirm Password:</p>
+            <input type="password" name="confirm_password" placeholder="confirm password">
+            <br>
+            <input id="submit_button" type="submit" value="register">
+        </form>
+        <form action="/login" method="POST">
+            <p>User Name</p>
+            <input type="text" name="username" placeholder="user name">
+            <p>Password:</p>
+            <input type="password" name="password" placeholder="password">
+            <br>
+            <input id="submit_button" type="submit" value="log in">
+        </form>
+    </div>
+</body>
+</html>

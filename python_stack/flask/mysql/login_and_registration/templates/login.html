@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome *user*</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<h1>Welcome {{ session['username'] }}</h1>
+<p>you are now logged in</p>
+</body>
+</html>

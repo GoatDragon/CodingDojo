@@ -25,25 +25,31 @@ def new_user():
 
 @app.route('/users/add/', methods=["POST"])
 def add_user():
-    valid = True
-    if len(request.form["firstname"]) < 2:
-        valid = False
-        flash("first name too short")
-    if len(request.form["lastname"]) < 2:
-        valid = False
-        flash("last name too short")
-    if not EMAIL_REGEX.match(request.form["email"]):
-        valid = False
-        flash("invalid email address")
-    if not valid:
-        return redirect('/users/new')
     data = {
         "f": request.form["firstname"],
         "l": request.form["lastname"],
         "e": request.form["email"]
     }
+    query = "SELECT * FROM users WHERE email=%(e)s"
     db = connectToMySQL('users_project')
+    email_unique = db.query_db(query, data)
+    valid = True
+    if len(request.form["firstname"]) < 3:
+        valid = False
+        flash("first name too short")
+    if len(request.form["lastname"]) < 3:
+        valid = False
+        flash("last name too short")
+    if not EMAIL_REGEX.match(request.form["email"]):
+        valid = False
+        flash("invalid email")
+    if len(email_unique) > 0:
+        valid = False
+        flash("email already in use")
+    if not valid:
+        return redirect('/users/new')
     query = "INSERT INTO users(first_name, last_name, email, created_at, updated_at) VALUES(%(f)s, %(l)s, %(e)s, NOW(), NOW())"
+    db = connectToMySQL('users_project')
     the_user = db.query_db(query, data)
     flash("User Added Successfully")
     return redirect('/users/show/' + str(the_user))
@@ -53,35 +59,39 @@ def add_user():
 def edit_user(userid):
     db = connectToMySQL('users_project')
     query = "SELECT * FROM users WHERE id=%(id)s"
-    data = {
-        "id": userid
-    }
+    data = {"id": userid}
     the_user = db.query_db(query, data)
     return render_template('edit_user.html', user=the_user)
 
 
 @app.route('/users/edit/<userid>/confirm', methods=["POST"])
 def confirm_edit(userid):
-    valid = True
-    if len(request.form["firstname"]) < 2:
-        valid = False
-        flash("first name too short")
-    if len(request.form["lastname"]) < 2:
-        valid = False
-        flash("last name too short")
-    if not EMAIL_REGEX.match(request.form["email"]):
-        valid = False
-        flash("invalid email address")
-    if not valid:
-        return redirect('/users/edit/' + str(userid))
-    db = connectToMySQL('users_project')
-    query = "UPDATE users SET first_name=%(f)s, last_name=%(l)s, email=%(e)s, updated_at=NOW() WHERE id=%(id)s"
     data = {
         "id": userid,
         "f": request.form["firstname"],
         "l": request.form["lastname"],
         "e": request.form["email"]
     }
+    query = "SELECT * FROM users WHERE email=%(e)s AND NOT id=%(id)s"
+    db = connectToMySQL('users_project')
+    email_unique = db.query_db(query, data)
+    valid = True
+    if len(request.form["firstname"]) < 3:
+        valid = False
+        flash("first name too short")
+    if len(request.form["lastname"]) < 3:
+        valid = False
+        flash("last name too short")
+    if not EMAIL_REGEX.match(request.form["email"]):
+        valid = False
+        flash("invalid email address")
+    if len(email_unique) > 0:
+        valid = False
+        flash("email already in use")
+    if not valid:
+        return redirect('/users/edit/' + str(userid))
+    db = connectToMySQL('users_project')
+    query = "UPDATE users SET first_name=%(f)s, last_name=%(l)s, email=%(e)s, updated_at=NOW() WHERE id=%(id)s"
     db.query_db(query, data)
     print("the USER", data["id"])
     flash("User Updated Successfully")
@@ -92,9 +102,7 @@ def confirm_edit(userid):
 def show_user(userid):
     db = connectToMySQL('users_project')
     query = "SELECT * FROM users WHERE id=%(id)s"
-    data = {
-        "id": userid
-    }
+    data = {"id": userid}
     the_user = db.query_db(query, data)
     return render_template('show_user.html', user=the_user)
 
@@ -103,9 +111,7 @@ def show_user(userid):
 def delete_user(userid):
     db = connectToMySQL('users_project')
     query = "DELETE FROM users WHERE id=%(id)s"
-    data = {
-        "id": userid
-    }
+    data = {"id": userid}
     db.query_db(query, data)
     flash(f"User {userid} Deleted")
     return redirect('/users/')
