@@ -1,0 +1,22 @@
+*{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body{
+    display:grid;
+    grid-template-columns: 1fr;
+    /*background-color: black;*/
+    justify-items: center;
+}
+h1, h2, p{
+    color: white;
+    margin-top: 2rem 0 0 0;
+}
+div{
+    background-color: #464646;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    border-radius: 3rem;
+    margin:10rem 0 0 0;
+}

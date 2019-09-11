@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cool clock!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'clock/styles.css' %}">
+    <style>
+        body{
+            background-image: url({% static 'clock/space_time.png' %});
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h2>The current time and date is:</h2>
+    <h1>{{ time }}</h1>
+    <p>(refresh page to update)</p>
+    </div>
+</body>
+</html>
