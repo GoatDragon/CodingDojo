@@ -18,7 +18,7 @@ def add_user():
     data = {"em": request.form["email"]}
     query = "SELECT * FROM users WHERE email=%(em)s"
     db = connectToMySQL('login_registration')
-    email_unique = db.query_db(query, data)   
+    email_unique = db.query_db(query, data)
     data = {"un": request.form["username"]}
     query = "SELECT * FROM users WHERE username=%(un)s"
     db = connectToMySQL('login_registration')
