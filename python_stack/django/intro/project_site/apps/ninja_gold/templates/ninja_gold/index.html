@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ninja_gold/style.css' %}">
+    <title>Ninja Gold</title>
+</head>
+<body>
+    <div class="gold_box">
+        <span class="gold">Your Gold: {{  request.session.gold  }}</span>
+        <form class="reset" action="/ninja/reset/" method="post">
+            {% csrf_token %}
+            <input type="submit" name="reset gold" value="reset">
+        </form>
+    </div>
+    <div class="places">
+        <div class="place">
+            <h2>Farm</h2>
+            <img src="{% static 'ninja_gold/farm.png' %}" alt="farm picture">
+            <form action='/ninja/process_gold/' method='post'>
+                {% csrf_token %}
+                <input type="hidden" name="building" value="farm">
+                <input type="submit" value="Find gold!">
+            </form>
+        </div>
+        <div class="place">
+            <h2>Cave</h2>
+            <img src="{% static 'ninja_gold/goldmine.gif' %}" alt="cave picture">
+            <form action='/ninja/process_gold/' method='post'>
+                {% csrf_token %}
+                <input type="hidden" name="building" value="cave">
+                <input type="submit" value="Find gold!">
+            </form>
+        </div>
+        <div class="place">
+            <h2>House</h2>
+            <img src="{% static 'ninja_gold/house.png' %}" alt="house picture">
+            <form action='/ninja/process_gold/' method='post'>
+                {% csrf_token %}
+                <input type="hidden" name="building" value="house">
+                <input type="submit" value="Find gold!">
+            </form>
+        </div>
+        <div class="place">
+            <h2>Casino</h2>
+            <img src="{% static 'ninja_gold/castle.png' %}" alt="castle picture">
+            <form action='/ninja/process_gold/' method='post'>
+                {% csrf_token %}
+                <input type="hidden" name="building" value="casino">
+                <input type="submit" value="Find gold!">
+            </form>
+        </div>
+    </div>
+    <div class="activities">
+        {% for message in request.session.log %}
+            <span class='{{ message.0 }}'> {{ message.1 }}</span>
+            <br>
+        {% endfor %}
+    </div>
+</body>
+</html>
