@@ -1,0 +1,39 @@
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        body{
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+        h4{
+            margin-top: 50px;
+        }
+        h2{
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #DDDDDD
+        }
+        form{
+            margin-top: 20px;
+        }
+        button{
+            outline: 0;
+            border: 4px outset;
+            border-radius: 10px;
+            padding: 5px;
+            font-weight: bold;
+        }
+        button:active{
+            border: 4px inset;
+        }
+        div{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        button#red{
+            color: red;
+        }

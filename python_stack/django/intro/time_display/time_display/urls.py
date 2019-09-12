@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.clock.urls')),
+    path('word/', include('apps.random_word_generator.urls'))
 ]
