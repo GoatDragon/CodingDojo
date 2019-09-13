@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.dojos_and_ninjas',
     'apps.users_shell',
     'apps.sql_queries_to_orm',
     'apps.ninja_gold',

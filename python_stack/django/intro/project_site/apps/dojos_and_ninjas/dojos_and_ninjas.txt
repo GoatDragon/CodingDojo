@@ -1,0 +1,30 @@
+from apps.dojos_and_ninjas.models import *
+
+Dojo.objects.create(name="The Dojo", city="Dallas", state="Texas")
+Dojo.objects.create(name="Another Dojo", city="San Francisco", state="California")
+Dojo.objects.create(name="WhataDojo", city="Las Vegas", state="Nevada")
+
+for dojo in Dojo.objects.all(): 
+    dojo.delete()
+
+Dojo.objects.create(name="The Dojo", city="Dallas", state="Texas")
+Dojo.objects.create(name="Another Dojo", city="San Francisco", state="California")
+Dojo.objects.create(name="WhataDojo", city="Las Vegas", state="Nevada")
+
+Ninja.objects.create(first_name="Jo", last_name="blow", dojo=Dojo.objects.get(name="The Dojo"))
+Ninja.objects.create(first_name="Funky", last_name="Monkey", dojo=Dojo.objects.get(name="The Dojo"))
+Ninja.objects.create(first_name="Mister", last_name="Twister", dojo=Dojo.objects.get(name="The Dojo"))
+
+Ninja.objects.create(first_name="Mr", last_name="Snuggles", dojo=Dojo.objects.get(name="Another Dojo"))
+Ninja.objects.create(first_name="Fuzzy", last_name="Wuzzy", dojo=Dojo.objects.get(name="Another Dojo"))
+Ninja.objects.create(first_name="Martha", last_name="Stewart", dojo=Dojo.objects.get(name="Another Dojo"))
+
+Ninja.objects.create(first_name="Butt", last_name="Face", dojo=Dojo.objects.get(name="WhataDojo"))
+Ninja.objects.create(first_name="Dino", last_name="Rex", dojo=Dojo.objects.get(name="WhataDojo"))
+Ninja.objects.create(first_name="Bob", last_name="Burger", dojo=Dojo.objects.get(name="WhataDojo"))
+
+Dojo.objects.get(name="The Dojo").ninjas.all()
+Dojo.objects.get(name="Another Dojo").ninjas.all()
+Dojo.objects.get(name="WhataDojo").ninjas.all()
+
+Dojo.objects.create(name="Tralala", city="Cheese", state="Moon", desc="what?")
