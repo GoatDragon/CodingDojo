@@ -1,0 +1,18 @@
+from apps.users_shell.models import *
+
+Users.objects.create(first_name="Sam", last_name="Jackson", email="sj1@usa.net", age=31)
+Users.objects.create(first_name="Jessica", last_name="Melara", email="chibijeca@gmail.com", age=35)
+Users.objects.create(first_name="Paul", last_name="Jackson", email="pj@usa.net", age=71)
+
+Users.objects.filter()
+
+Users.objects.last()
+
+Users.objects.first()
+
+c = Users.objects.get(id=3)
+c.last_name = "Pancakes"
+c.save()
+
+c = Users.objects.get(id=2)
+c.delete()

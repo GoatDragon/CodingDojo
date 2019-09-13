@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.users_shell',
     'apps.sql_queries_to_orm',
     'apps.ninja_gold',
     'apps.random_word_generator',
