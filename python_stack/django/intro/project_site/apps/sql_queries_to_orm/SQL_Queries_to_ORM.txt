@@ -1,0 +1,21 @@
+Hogwarts.objects.create(name="Harry Potter", house="Gryffindor", pet="Hedwig", year="5")
+
+Hogwarts.objects.create(name="Hermoine Granger", house="Gryffindor", pet="Crookshanks", year="5")
+
+Hogwarts.objects.get(id=1)
+
+Hogwarts.objects.filter(house="Gryffindor")
+
+c = Hogwarts.objects.get(id=1)
+c.year=6
+c.save
+
+INSERT INTO Hogwarts (name, house, pet, year) VALUES ("Draco Malfoy", "Slytherin", "Unknown", 5)
+
+INSERT INTO Hogwarts (name, house, pet, year) VALUES ("Luna Lovegood", "Ravenclaw", "None", 4)
+
+INSERT INTO Hogwarts (name, house, pet, year) VALUES ("Padma Patil", "Ravenclaw", "None", 4)
+
+SELECT * FROM Hogwarts WHERE house="Ravenclaw"
+
+UPDATE Hogwarts SET year=6 WHERE name="Luna Lovegood"
