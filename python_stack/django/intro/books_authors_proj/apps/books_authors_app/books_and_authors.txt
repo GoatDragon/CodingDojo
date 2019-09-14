@@ -1,0 +1,48 @@
+Book.objects.create(title="C Sharp", desc="How to program in C Sharp")
+Book.objects.create(title="Java", desc="How to program in Java")
+Book.objects.create(title="Python", desc="How to program in Python")
+Book.objects.create(title="PHP", desc="How to program in PHP")
+Book.objects.create(title="Ruby", desc="How to program in Ruby")
+
+list = [['Jane', 'Austen']['Emily', 'Dickinson'], ['Fyodor', 'Dostoevksy'], ['William', 'Shakespeare'], ['Lau', 'Tzu']]
+for author in list: 
+    Author.objects.create(first_name=author[0], last_name=author[1])
+
+book = Book.objects.get(title='C Sharp')
+book.title='C Sharp'
+book.save()
+
+a = Author.objects.get(id=4)
+a.first_name="Bill"
+a.save()
+
+a = Author.objects.get(id=1)
+b = Book.objects.get(id=1)
+b.authors.add(a)
+b = Book.objects.get(id=2)
+b.authors.add(a)
+
+a = Author.objects.get(id=2)
+for i in range(1, 4): 
+    Book.objects.get(id=i).authors.add(a) 
+
+a = Author.objects.get(id=4)
+for i in range(1, 5):
+    Book.objects.get(id=i).authors.add(a) 
+
+a = Author.objects.get(id=5)
+for i in range(1, 6):
+    Book.objects.get(id=i).authors.add(a) 
+
+for author in Book.objects.get(id=3).authors.values():
+    print(author['first_name'], author['last_name'])
+
+Book.objects.get(id=3).authors.remove(Author.objects.get(id=1))
+
+Book.objects.get(id=2).authors.add(Author.objects.get(id=5))
+
+ for book in Author.objects.get(id=3).books.values():
+    print(book['title']) 
+
+for author in Book.objects.get(id=5).authors.values():
+    print(author['first_name'], author['last_name'])

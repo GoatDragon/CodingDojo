@@ -32,7 +32,6 @@ def gold(request):
         color = 'red'
     request.session['gold'] += gains
     request.session['log'].insert(0, [color, f"{building} earned you {gains} gold at {datetime.now()}"])
-    print(request.session['log'])
     return redirect('/ninja')
 
 
