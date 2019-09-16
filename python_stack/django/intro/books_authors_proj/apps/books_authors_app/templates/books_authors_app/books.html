@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books and Authors</title>
+</head>
+<body>
+    <form action="/createbook/" method="POST">
+        {% csrf_token %}
+        <p>Title:</p>
+        <input type="text" name="title">
+        <p>Description:</p>
+        <textarea name="description" cols="20" rows="8"></textarea>
+        <br>
+        <input type="submit" value="Add">
+    </form>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+        </thead>
+        {% for book in books %}
+            <tr>
+                <td>
+                    <a href="/viewbook/{{book.id}}">{{ book.id }}</a>
+                </td>
+                <td>
+                    {{ book.title }}
+                </td> 
+            </tr>
+        {% endfor %} 
+    </table>
+</body>
+</html>
