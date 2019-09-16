@@ -13,11 +13,12 @@ def add(request):
     if request.method == "GET":
         return render(request, 'tv_shows/add.html')
     if request.method == "POST":
-        tit = request.POST['title']
-        net = request.POST['network']
-        r_d = request.POST['release_date']
-        des = request.POST['description']
-        show = Show.objects.create(title=tit, network=net, release_date=r_d, description=des)
+        show = Show.objects.create(
+            title=request.POST['title'],
+            network=request.POST['network'],
+            release_date=request.POST['release_date'],
+            description=request.POST['description']
+        )
         return redirect('/show/' + str(show.id))
 
 
@@ -53,7 +54,7 @@ def edit(request, id):
         show.release_date = request.POST['release_date']
         show.description = request.POST['description']
         show.save()
-        return redirect('/show/' + str(show.id))
+        return redirect('/show/' + id)
 
 
 def delete(request, id):

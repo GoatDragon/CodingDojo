@@ -8,10 +8,14 @@
 <h1>Add a New Show</h1>
 <form action="/add/" method="POST">
     {% csrf_token %}
-    <h4>Title:</h4> <input type="text" name="title">
-    <h4>Network:</h4> <input type="text" name="network">
-    <h4>Release Date:</h4> <input type="date" name="release_date">
-    <h4>Description:</h4> <textarea name="description" cols="20" rows="8"></textarea>
+    <h4>Title:</h4>
+    <input type="text" name="title">
+    <h4>Network:</h4>
+    <input type="text" name="network">
+    <h4>Release Date:</h4>
+    <input type="date" name="release_date">
+    <h4>Description:</h4>
+    <textarea name="description" cols="20" rows="8"></textarea>
     <br>
     <input type="submit" value="Add">
 </form>
