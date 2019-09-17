@@ -2,16 +2,26 @@
 <html>
 <head>
     <title>Edit a Show!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tv_shows/style.css' %}">
 </head>
 <body>
-<a href="/">home</a>
 <h1>Edit a New Show</h1>
+{% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    {{ message }}
+                </li>
+            {% endfor %}
+        </ul>
+{% endif %}
 <form action="/edit/{{ show.id }}/" method="POST">
     {% csrf_token %}
     <h4>Title:</h4>
-    <input type="text" name="title" value={{ show.title }}>
+    <input type="text" name="title" value="{{ show.title }}">
     <h4>Network:</h4>
-    <input type="text" name="network" value={{ show.network }}>
+    <input type="text" name="network" value="{{ show.network }}">
     <h4>Release Date:</h4>
     <input type="date" name="release_date" value="{{ releasedate }}">
     <h4>Description:</h4>
@@ -19,7 +29,9 @@
     <br>
     <input type="submit" value="Update">
 </form>
+<br>
 <a href="/show/{{ show.id }}">Go to Show</a>
+<a href="/">Home</a>
 </body>
 </html>
 

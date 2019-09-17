@@ -2,15 +2,22 @@
 <html>
 <head>
     <title>This is a Show!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tv_shows/style.css' %}">
 </head>
 <body>
-    <a href="/">home</a>
+    <br>
     <h1>TV Show {{ show.id }}</h1>
+    <div class='box'>
     <p><b>Title:</b> {{ show.title }}</p>
     <p><b>Network:</b> {{ show.network }}</p>
     <p><b>Release Date:</b> {{ show.release_date }}</p>
     <p><b>Description:</b> {{ show.description }}</p>
-    <a href="/edit/{{ show.id }}">edit</a> |
-    <a href="/delete/{{ show.id }}">delete</a>
+    <p><b>Created At:</b> {{ show.created_at }}</p>
+    <p><b>Updated At:</b> {{ show.updated_at }}</p>
+    <a href="/edit/{{ show.id }}">Edit</a> |
+    <a href="/delete/{{ show.id }}">Delete</a>
+    </div>
+    <a href="/">Home</a>
 </body>
 </html>

@@ -1,0 +1,35 @@
+*{
+    background-color: #AFAFAF;
+    color: #2A2A2A;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+table, th, tr, td{
+    border: solid #676767 1px;
+    border-collapse: collapse;
+}
+th, td, a{
+    padding: 8px;
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+form, div.box{
+    border: solid #676767 1px;
+    display: inline-block;
+    padding: 8px;
+}
+h4{
+    margin-bottom: 0;
+}
+textarea{
+    border: inset 2px #EEEEEE;
+}
+ul.messages{
+    list-style-type: none;
+}
