@@ -1,0 +1,37 @@
+*{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #B1B1B1;
+    color: #282828;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+div.twocolumn{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+p{
+    margin: 0;
+}
+input{
+    margin: 0 0 1rem 0;
+}
+form{
+    margin: 0 1rem;
+    padding: .5rem;
+    border:solid black 0.1rem;
+    border-radius: 1rem;
+}
+h2{
+    text-align: center;
+    margin: 3rem 0 .2rem 0;
+}
+ul.messages li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: blue;
+}

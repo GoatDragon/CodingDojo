@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome {{ request.session.username }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'loginreg/style.css' %}">
+</head>
+<body>
+<h1>Welcome {{ request.session.username }}</h1>
+<p>you are now logged in</p>
+<a href="/logout/"><button>logout</button></a>
+</body>
+</html>
