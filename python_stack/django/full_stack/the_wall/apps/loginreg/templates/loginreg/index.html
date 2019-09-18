@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Registration Project</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'loginreg/style.css' %}">
+</head>
+<body>
+    <div class="topbar">
+        <p class="toptext">Goat Garden</p>
+        {% if 'username' in request.session %}
+            <p class="toptext">Welcome {{ request.session.username }}!</p>
+            <a class = "toptext" href="/logout/">logout</a>
+        {% endif %}
+    </div>
+    <h3>Welcome to the Garden of the Goats! To view the garden wall with out logging, click <a href="/wall/">here</a>!</h3>
+    {% if messages %}
+        {% for message in messages %}
+            <p> {{message}} </p>
+        {% endfor %}
+    {% endif%}
+    <h2>Log In</h2>
+    <form action="login/" method="POST">
+        {% csrf_token %}
+        <p>User Name</p>
+        <input type="text" name="username" >
+        <p>Password:</p>
+        <input type="password" name="password" >
+        <br>
+        <input id="submit_button" type="submit" value="log in">
+    </form>
+    <h2>Register</h2>
+    <form action="/" id="register" method="POST">
+        {% csrf_token %}
+        <p>User Name</p>
+        <input type="text" name="username" value="{{ user_name }}">
+        <p>Email:</p>
+        <input type="text" name="email" value={{ email }}>
+        <p>Birthday:</p>
+        <input type="date" name="birthday" value={{ birthday }}>
+        <p>Password:</p>
+        <input type="password" name="password" > 
+        <p>Confirm Password:</p>
+        <input type="password" name="confirm_password" >
+        <br>
+        <input id="submit_button" type="submit" value="register">
+    </form>
+</body>
+</html>

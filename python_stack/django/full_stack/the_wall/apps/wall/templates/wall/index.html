@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'loginreg/style.css' %}">
+</head>
+<body>
+    <div class="topbar">
+            <p class="toptext">Goat Garden</p>
+        {% if 'username' in request.session %}
+            <p class="toptext">Welcome {{ request.session.username }}!</p>
+            <a class = "toptext" href="/logout/">logout</a>
+        {% endif %}
+        {% if 'username' not in request.session %}
+        <a class = "toptext" href="/">return to login</a>
+        {% endif %}
+    </div>
+    <div id="allcontent">
+        {% if 'username' in request.session %}
+            <form action="/wall/post/" method="POST">
+                {% csrf_token %}
+                <p>post a comment:</p>
+                <textarea name="message" cols="70" rows="5"></textarea>
+                <input type="submit">
+            </form>
+        {% endif %}
+        {% for message in messages %}
+            <div id="message">
+                <div class="a_message">
+                    <h6 class="post a_message">{{ message.user.username }} posted at {{ message.created_at }}:</h6>
+                    <p class="post top_message">{{ message.message }}</p>
+                </div>
+                {% for comment in comments %}
+                    {% if comment.message.id == message.id %}
+                    <h6 class="post">{{ comment.user.username }} replied at {{ comment.created_at }}</h6>
+                        <p class="post">{{ comment.comment }}</p>
+                    {% endif %}
+                {% endfor %}
+                {% if 'username' in request.session %}
+                <form action="/wall/comment/" method="POST">
+                    {% csrf_token %}
+                    <p>reply</p>
+                    <input type="hidden" name="message_id" value={{ message.id }}>
+                    <textarea name="comment" cols="20" rows="1"></textarea>
+                    <input type="submit">
+                </form>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

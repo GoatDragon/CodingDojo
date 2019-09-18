@@ -1,4 +1,13 @@
-from django.db import models
+from django.db import modelstry:
+            today_fdate = datetime.datetime.strptime(datetime.date.today().strftime("%Y-%d-%m"), "%Y-%d-%m")
+            birthday_fdate = datetime.datetime.strptime(postData['birthday'], "%Y-%m-%d")
+            thirteen_fdate = datetime.datetime.now() - datetime.timedelta(days=13 * 365.25)
+            if birthday_fdate > today_fdate:
+                errors['date_future'] = "birthday must be in the past"
+            if birthday_fdate > thirteen_fdate:
+                errors['date_young'] = "you must be over 13 years old to register"
+        except ValueError:
+            errors["date_none"] = "please enter a birthday"
 from datetime import date
 from time import strptime
 
