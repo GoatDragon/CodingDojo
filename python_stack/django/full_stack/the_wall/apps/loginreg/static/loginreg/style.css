@@ -79,3 +79,9 @@ div#message{
     padding: .4rem;
     border-radius: 1rem;
 }
+#delete{
+    width:120px;
+    border: none;
+    margin: none;
+    padding: none;
+}

@@ -18,35 +18,40 @@
     </div>
     <div id="allcontent">
         {% if 'username' in request.session %}
-            <form action="/wall/post/" method="POST">
-                {% csrf_token %}
-                <p>post a comment:</p>
-                <textarea name="message" cols="70" rows="5"></textarea>
-                <input type="submit">
-            </form>
+        <form action="/wall/post/" method="POST">
+            {% csrf_token %}
+            <p>post a comment:</p>
+            <textarea name="message" cols="70" rows="5"></textarea>
+            <input type="submit">
+        </form>
         {% endif %}
         {% for message in messages %}
-            <div id="message">
-                <div class="a_message">
-                    <h6 class="post a_message">{{ message.user.username }} posted at {{ message.created_at }}:</h6>
-                    <p class="post top_message">{{ message.message }}</p>
-                </div>
-                {% for comment in comments %}
-                    {% if comment.message.id == message.id %}
-                    <h6 class="post">{{ comment.user.username }} replied at {{ comment.created_at }}</h6>
-                        <p class="post">{{ comment.comment }}</p>
-                    {% endif %}
-                {% endfor %}
-                {% if 'username' in request.session %}
-                <form action="/wall/comment/" method="POST">
-                    {% csrf_token %}
-                    <p>reply</p>
-                    <input type="hidden" name="message_id" value={{ message.id }}>
-                    <textarea name="comment" cols="20" rows="1"></textarea>
-                    <input type="submit">
-                </form>
-                {% endif %}
+        <div id="message">
+            <div class="a_message">
+                <h6 class="post a_message">{{ message.user.username }} posted at {{ message.created_at }}:</h6>
+                <p class="post top_message">{{ message.message }}</p>
             </div>
+            {% for comment in message.comments.all %}
+            <h6 class="post">{{ comment.user.username }} replied at {{ comment.created_at }}</h6>
+            <p class="post">{{ comment.comment }}</p>
+            {% if comment.user.id == request.session.id %}
+            <form id="delete" action="/wall/delete/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="comment_id" value={{ comment.id }}>
+                <input id="delete" type="submit" value="delete comment">
+            </form> 
+            {% endif %}
+            {% endfor %}
+            {% if 'username' in request.session %}
+            <form action="/wall/comment/" method="POST">
+                {% csrf_token %}
+                <p>reply</p>
+                <input type="hidden" name="message_id" value={{ message.id }}>
+                <textarea name="comment" cols="20" rows="1"></textarea>
+                <input type="submit">
+            </form>
+            {% endif %}
+        </div>
         {% endfor %}
     </div>
 </body>

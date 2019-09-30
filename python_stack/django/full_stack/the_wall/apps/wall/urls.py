@@ -4,5 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.wall),
     path('post/', views.post),
-    path('comment/', views.comment)
+    path('comment/', views.comment),
+    path('delete/', views.delete)
 ]

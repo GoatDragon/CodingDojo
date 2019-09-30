@@ -18,6 +18,9 @@ class CommentManager(models.Manager):
             comment=comment
         )
 
+    def delete_comment(self, comment_id):
+        Comment.objects.get(id=comment_id).delete()
+
 
 class Message(models.Model):
     user = models.ForeignKey(User, related_name="messages", on_delete=models.PROTECT)
