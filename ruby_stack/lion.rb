@@ -2,7 +2,7 @@ require_relative 'mammal'
 
 class Lion < Mammal
     def initialize
-        @health = 170
+        super 170
     end
 
     def fly
@@ -18,6 +18,10 @@ class Lion < Mammal
     def eat_humans
         @health += 20
         self
+    end
+    def display_health
+        print "I am a lion "
+        super
     end
 end
 
