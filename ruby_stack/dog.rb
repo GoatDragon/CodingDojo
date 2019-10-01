@@ -17,10 +17,6 @@ class Dog < Mammal
         #dogs love to run, again, why tf would it decrease their health?
         self
     end
-
-    def display_health
-        puts @health
-    end
 end
 
 dog = Dog.new
