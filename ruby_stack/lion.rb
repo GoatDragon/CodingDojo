@@ -19,6 +19,7 @@ class Lion < Mammal
         @health += 20
         self
     end
+
     def display_health
         print "I am a lion "
         super

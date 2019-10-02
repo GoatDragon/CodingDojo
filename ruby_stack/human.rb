@@ -75,4 +75,5 @@ w = Wizard.new
 n = Ninja.new
 s = Samurai.new
 s2 = Samurai.new
-s.how_many
+
+puts s.inspect
