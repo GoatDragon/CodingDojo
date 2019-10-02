@@ -10,34 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191002185458) do
+ActiveRecord::Schema.define(version: 20191002194050) do
 
-  create_table "addresses", force: :cascade do |t|
-    t.string   "street"
+  create_table "dojos", force: :cascade do |t|
+    t.string   "name"
     t.string   "city"
     t.string   "state"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "ninjas", force: :cascade do |t|
+    t.integer  "dojo_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
-    t.string   "password"
-    t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dojo_id"], name: "index_ninjas_on_dojo_id"
   end
 
 end
