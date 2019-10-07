@@ -10,6 +10,14 @@ Vagrant.configure("2") do |config|
   end
 end
 
+#fix from group discord:
+  #Tired of restarting rails server every time you make changes? Try this:    (2% money back guarantee it works)
+  #For Vagrant/ virtual box users, there's a bug where if the host clock and guest clock are out of sync, it borks rails' reloader.
+  #Add the following to the Vagrantfile:
+# config.vm.provider :virtualbox do |vb|
+#   vb.customize ["guestproperty", "set", :id, "--timesync-threshold", 5000]
+# end
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
