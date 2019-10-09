@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @dojo.branch %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @dojo.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @dojo.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @dojo.state %>
+</p>
+
+<%= link_to 'Edit', edit_dojo_path(@dojo) %> |
+<%= link_to 'Back', dojos_path %>
