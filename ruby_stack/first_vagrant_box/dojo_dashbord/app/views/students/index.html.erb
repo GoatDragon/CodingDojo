@@ -1,28 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h2>Dojo</h2>
-<p>
-  <strong>Branch:</strong>
-  <%= @dojo.branch %>
-</p>
 
-<p>
-  <strong>Street:</strong>
-  <%= @dojo.street %>
-</p>
+<h1>students</h1>
 
-<p>
-  <strong>City:</strong>
-  <%= @dojo.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @dojo.state %>
-</p>
-
-<%= link_to 'Edit Dojo', edit_dojo_path(@dojo) %>
-
-<h2>students</h2>
 <table>
   <thead>
     <tr>
@@ -35,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @dojo.students.each do |student| %>
+    <% @students.each do |student| %>
       <tr>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
@@ -45,7 +24,9 @@
     <% end %>
   </tbody>
 </table> 
-<%= link_to 'New student', "/dojos/#{@dojo.id}/students/new" %>
 
+<br>
+
+<%= link_to 'New student', "/dojos/#{params[:dojo_id]}/students/new" %>
 <br>
 <%= link_to 'Back', dojos_path %>
