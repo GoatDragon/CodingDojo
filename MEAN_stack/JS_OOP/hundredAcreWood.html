@@ -1,0 +1,163 @@
+<script>
+var eyore = {
+    character: "Eyore",
+    greet: function(){
+        console.log("How sad...")
+    }
+};
+var heffalumps = {
+    character: "Heffalumps",
+    greet: function(){
+        console.log("What am I?")
+    }
+};
+var kanga = {
+    character: "Kanga",
+    greet: function(){
+        console.log("waddup")
+    }
+};
+var owl = {
+    character: "Owl",
+    greet: function(){
+        console.log("Hoot!")
+    }
+};
+var christopher = {
+    character: "Christopher Robin",
+    greet: function(){
+        console.log("Christopher!")
+    }
+};
+var rabbit = {
+    character: "Rabbit",
+    greet: function(){
+        console.log("Hippity Hop!")
+    }
+};
+var gopher = {
+    character: "Gopher",
+    greet: function(){
+        console.log("digging brb")
+    }
+};
+var piglet = {
+    character: "Piglet",
+    greet: function(){
+        console.log("oink")
+    }
+};
+var winnie = {
+    character: "Winnie the Pooh",
+    greet: function(){
+        console.log("HONEY!!!!")
+    }
+};
+var bees = {
+    character: "Bees",
+    greet: function(){
+        console.log("buzzz")
+    }
+};
+var tigger = {
+    character: "Tiger",
+    greet: function(){
+        console.log("Boing!")
+    }
+};
+
+eyore.east = heffalumps;
+eyore.south = kanga;
+heffalumps.west = eyore;
+kanga.north = eyore;
+kanga.south = christopher;
+owl.east = christopher;
+owl.south = piglet;
+christopher.north = kanga;
+christopher.east = rabbit;
+christopher.south = winnie;
+christopher.west = owl;
+rabbit.east = gopher;
+rabbit.south = bees;
+rabbit.west = christopher;
+gopher.west = rabbit;
+piglet.north = owl;
+piglet.east = winnie;
+winnie.north = christopher;
+winnie.east = bees;
+winnie.south = tigger;
+winnie.west = piglet;
+bees.north = rabbit;
+bees.west = winnie;
+tigger.north = winnie;
+
+var player = {
+    location: tigger,
+    honey: false
+};
+
+function move (direction){
+    console.log(player.location.direction)
+    if (direction === "north" && player.location.north){
+        player.location = player.location.north
+        console.log("You are now at " + player.location.character + "'s house")
+        player.location.greet()
+    }
+    else if (direction === "south" && player.location.south){
+        player.location = player.location.south
+        console.log("You are now at " + player.location.character + "'s house")
+        player.location.greet()
+    }
+    else if (direction === "east" && player.location.east){
+        player.location = player.location.east
+        console.log("You are now at " + player.location.character + "'s house")
+        player.location.greet()
+    }
+    else if (direction === "west" && player.location.west){
+        player.location = player.location.west
+        console.log("You are now at " + player.location.character + "'s house")
+        player.location.greet()
+    }
+    else{
+        console.log("You may not go that way!")
+    }
+    }
+
+function mission(){
+    let list = [eyore, heffalumps, kanga, owl, christopher, rabbit, gopher, piglet, winnie, tigger]
+    let location = list[Math.floor(Math.random() * list.length)]
+    console.log(location.character, "needs honey!")
+    return location
+}
+var mission = mission()
+function pickup(){
+    if (player.location == bees){
+        player.honey = true
+        console.log("you got honey!")
+    }
+    else{
+        console.log("you can't get honey here!")
+    }
+}
+function dropoff(){
+    if (player.honey == false){
+        console.log("You have no honey.")
+    }
+    else if (player.location == mission && player.honey == true){
+        console.log("You gave honey to", mission.character)
+        player.honey=false
+    }
+    else{
+        console.log(player.location.character, "doesn't need any honey!")
+    }
+}
+</script>
+<<body>
+    <button onclick="move('north')">NORTH</button>
+    <button onclick="move('south')">SOUTH</button>
+    <button onclick="move('west')">WEST</button>
+    <button onclick="move('east')">EAST</button>
+    <button onclick="pickup()">pickup</button>
+    <button onclick="dropoff()">dropoff</button>
+    <img src="hundredacrewood.png" alt="map of hundred acre woods">
+</body>
