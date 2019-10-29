@@ -121,7 +121,7 @@ function move (direction){
     else{
         console.log("You may not go that way!")
     }
-    }
+}
 
 function mission(){
     let list = [eyore, heffalumps, kanga, owl, christopher, rabbit, gopher, piglet, winnie, tigger]
@@ -130,6 +130,7 @@ function mission(){
     return location
 }
 var mission = mission()
+
 function pickup(){
     if (player.location == bees){
         player.honey = true
@@ -139,18 +140,20 @@ function pickup(){
         console.log("you can't get honey here!")
     }
 }
+
 function dropoff(){
     if (player.honey == false){
         console.log("You have no honey.")
     }
     else if (player.location == mission && player.honey == true){
         console.log("You gave honey to", mission.character)
-        player.honey=false
+        player.honey = false
     }
     else{
         console.log(player.location.character, "doesn't need any honey!")
     }
 }
+
 </script>
 <<body>
     <button onclick="move('north')">NORTH</button>
