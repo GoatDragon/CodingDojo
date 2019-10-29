@@ -1,8 +1,22 @@
-var foo = "bar";
-function magic(){
-    foo = "hello world";
-    console.log(foo);
-    // var foo;
+function makePasta(pasta, makeSauce) {
+  console.log("Boiling water");
+  console.log("Putting " + pasta + " pasta in the water");
+  // create a variable for sauce!
+  var sauce = makeSauce();          // invoke makeSauce, our callback
+  console.log("Mixing sauce");
+  console.log("Pasta is done!");
+  return pasta + " Pasta with " + sauce + " sauce! Voila!";
 }
-magic();
-console.log(foo);
+function makePesto() {
+  console.log("Making Pesto");
+  return "pesto";
+}
+function makeAlfredo() {
+  console.log("Making Alfredo");
+  return "alfredo";
+}
+// we pass the whole makePesto recipe to makePasta!
+console.log(makePasta("Penne", makePesto));
+// notice lack of parentheses after makePesto.
+// Remember: we want to pass the function, not execute it and pass a return value.
+console.log(makePasta("Farfalle", makeAlfredo));
