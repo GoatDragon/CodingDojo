@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trivia</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <p id="question"></p>
+    <p id="answers"></p>
+    <script>
+        function trivia(){   
+        $.get("https://opentdb.com/api.php?amount=1", displayTrivia)
+        }
+        trivia()
+        function displayTrivia(data){
+            $("#question").html(data.results[0].question)
+            $("#answers").html(generateAnswers(data))
+            loadButtons()
+        }
+        function generateAnswers(data){
+            let answers = []
+            let incorrect = data.results[0].incorrect_answers
+            let correct = data.results[0].correct_answer
+            for (answer in incorrect){
+                answers.push("<button class='incorrect'>"+incorrect[answer]+"</button>")
+            }
+            answers.push("<button class='correct'>"+correct+"</button>")
+            return shuffle(answers)
+        }
+        function shuffle(array) {
+          var m = array.length, t, i;
+          // While there remain elements to shuffle…
+          while (m) {
+            // Pick a remaining element…
+            i = Math.floor(Math.random() * m--);
+            // And swap it with the current element.
+            t = array[m];
+            array[m] = array[i];
+            array[i] = t;
+          }
+          return array;
+        }
+        function loadButtons(){
+            $(".incorrect").click(function(){
+                alert("Incorrect")
+            })
+            $(".correct").click(function(){
+                alert("Correct!")
+                trivia()
+            })
+        }
+    </script>
+</body>
+</html>
