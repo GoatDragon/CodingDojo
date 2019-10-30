@@ -1,22 +1,30 @@
-function makePasta(pasta, makeSauce) {
-  console.log("Boiling water");
-  console.log("Putting " + pasta + " pasta in the water");
-  // create a variable for sauce!
-  var sauce = makeSauce();          // invoke makeSauce, our callback
-  console.log("Mixing sauce");
-  console.log("Pasta is done!");
-  return pasta + " Pasta with " + sauce + " sauce! Voila!";
+// Private variables are scoped to the constructor with the 'var' keyword
+function Car(make, model) {
+    var odometer = 0;
+    this.make = make;
+    this.model = model;
+    
+    // To make functions private, we scope them to the constructor
+    function updateOdometer(distance) {
+        odometer += distance;
+    };
+    
+    // 'Getter' functions help us read private variables
+    this.readOdometer = function() {
+      return odometer;
+    }
+    
+    // 'Setter' functions help us update private variables
+    this.drive = function(distance) {
+      updateOdometer(distance);
+      // return this will allow us to chain methods
+      return this;
+    }
 }
-function makePesto() {
-  console.log("Making Pesto");
-  return "pesto";
-}
-function makeAlfredo() {
-  console.log("Making Alfredo");
-  return "alfredo";
-}
-// we pass the whole makePesto recipe to makePasta!
-console.log(makePasta("Penne", makePesto));
-// notice lack of parentheses after makePesto.
-// Remember: we want to pass the function, not execute it and pass a return value.
-console.log(makePasta("Farfalle", makeAlfredo));
+var myCarInstance = new Car("Chevy", "Camaro");
+// by returning this, we can chain drive()
+myCarInstance.drive(50).drive(90); 
+// private variable is undefined
+console.log(myCarInstance.odometer);
+// but we can read it with our getter function
+console.log(myCarInstance.readOdometer());
