@@ -1,30 +1,16 @@
-// Private variables are scoped to the constructor with the 'var' keyword
-function Car(make, model) {
-    var odometer = 0;
-    this.make = make;
-    this.model = model;
-    
-    // To make functions private, we scope them to the constructor
-    function updateOdometer(distance) {
-        odometer += distance;
-    };
-    
-    // 'Getter' functions help us read private variables
-    this.readOdometer = function() {
-      return odometer;
+class Pizza {
+    constructor(radius, slices) {
+        this.radius = radius;
+        this._slices = slices;
     }
-    
-    // 'Setter' functions help us update private variables
-    this.drive = function(distance) {
-      updateOdometer(distance);
-      // return this will allow us to chain methods
-      return this;
+    get slices () { 
+        return this._slices; 
     }
-}
-var myCarInstance = new Car("Chevy", "Camaro");
-// by returning this, we can chain drive()
-myCarInstance.drive(50).drive(90); 
-// private variable is undefined
-console.log(myCarInstance.odometer);
-// but we can read it with our getter function
-console.log(myCarInstance.readOdometer());
+    set slices (slices) { 
+        this._slices = slices;
+    }
+};
+const pie = new Pizza(12, 6);
+console.log(pie.slices);     // we use the getter to determine how many slices we have
+pie.slices = 12;             // the setter will change the number of slices
+console.log(pie.slices);     // use the getter again to make sure our slices have doubled

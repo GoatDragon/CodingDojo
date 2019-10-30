@@ -1,13 +1,13 @@
 function Ninja (name) {
-    this.name = name;
+    this._name = name;
     this.health = 100;
     var speed = 3;
     var strength = 3;
     this.sayName = function () {
-        console.log(name);
+        console.log(this._name);
     }
     this.showStats = function () {
-        console.log('Name:', this.name, 'Health:', this.health, 'Speed:', speed, 'Strength:', strength);
+        console.log('Name:', this._name, 'Health:', this.health, 'Speed:', speed, 'Strength:', strength);
     }
     this.drinkSake = function () {
         this.health += 10;
@@ -42,3 +42,15 @@ ninja1.drinkSake();
 ninja1.showStats();
 ninja1.punch(ninja2).punch(ninja2).kick(ninja2).kick(ninja2);
 ninja2.showStats();
+
+
+// ninja1.sayName = function(){
+//     console.log('hi')
+// }
+// Ninja.prototype.sayName = function(){
+//     console.log('hi')
+// }
+// ninja1.sayName()
+// ninja2.sayName()
+// var ninja3 = new Ninja("bob");
+// ninja3.sayName()
