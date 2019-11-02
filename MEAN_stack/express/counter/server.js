@@ -15,10 +15,10 @@ app.use(express.static(__dirname + "/static"));
 app.get('/', (req, res) => {
     if (!req.session.count) {
         req.session.count = 1
-    }
+    };
     else {
         req.session.count ++
-    }
+    };
     res.render("counter.ejs", {count: req.session.count});
 });
 
@@ -29,8 +29,8 @@ app.get('/reset', (req, res) => {
 
 app.get('/addtwo', (req,res) => {
     req.session.count ++;
-    res.redirect('/')
-})
+    res.redirect('/');
+});
 
 
 app.listen(8000, () => console.log("listening on port 8000"));
