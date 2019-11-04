@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+            var socket = io();
+            $('#submit').click(function (data){
+                data.preventDefault()
+                formData = []
+                $('.input').each(function(){
+                    formData.push(this.value)
+                })
+                socket.emit('formSend', {data: formData})
+            })
+            socket.on('formBack', function (data) {
+                $('#1').text(data.returnedData.data)
+                $('#2').text(data.returnedData.number)
+            })
+         })
+    </script>
+</head>
+<body>
+    <p id="1"></p>
+    <p id="2"></p>
+    <form action="#">
+        <input class="input" type="text" name="name" placeholder="name">
+        <input class="input" type="text" name="age" placeholder="age">
+        <input class="input" type="text" name="dojo" placeholder="dojo">
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
