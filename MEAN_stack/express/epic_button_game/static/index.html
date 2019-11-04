@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>button game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var socket = io();
+            $("#up").click(function () {
+                socket.emit('plus')
+            })
+            $("#reset").click(function () {
+                socket.emit('reset')
+            })
+            socket.on('plusBack', function(data){
+                $("p").text(data.counter)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="up">epic button</button>
+    <button id="reset">not epic button</button>
+    <p></p>
+</body>
+</html>
