@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Mongoose</title>
+</head>
+<body>
+    <form action="/quotes" method="post">
+        Name: <input type="text" name="name">
+        <br>
+        Quote: <input type="text" name="text">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    
+    <% for (quote of quotes) { %>
+        <p><%= quote.name %></p>
+        <p><%= quote.text %></p>
+    <% } %>
+ 
+</body>
+</html>

@@ -5,9 +5,17 @@
 </head>
 <body>
     <form action="/users" method="post">
-        <input type="text" placeholder="name" name="name">
-        <input type="text" placeholder="age" name="age">
-        <input type="submit">
+        Name: <input type="text" name="name">
+        <br>
+        Age: <input type="text" name="age">
+        <br>
+        <input type="submit" value="Submit">
     </form>
+    
+    <% for (user of users) { %>
+        <p><%= user.name %></p>
+        <p><%= user.age %></p>
+    <% } %>
+ 
 </body>
 </html>
