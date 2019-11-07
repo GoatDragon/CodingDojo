@@ -4,7 +4,7 @@ app.use(express.static(__dirname + '/static'));
 const server = app.listen(1337);
 const io = require('socket.io')(server);
 
-var color = 'black'
+var color = 'black';
 
 io.on('connection', function (socket) {
     function emit_color(color){
@@ -12,15 +12,15 @@ io.on('connection', function (socket) {
     }
     emit_color(color);
     socket.on('red', function () {
-        color = 'red'
+        color = 'red';
         emit_color(color);
     })    
     socket.on('green', function () {
-        color = 'green'
+        color = 'green';
         emit_color(color);
     })    
     socket.on('blue', function () {
-        color = 'blue'
+        color = 'blue';
         emit_color(color);
     })
 })
