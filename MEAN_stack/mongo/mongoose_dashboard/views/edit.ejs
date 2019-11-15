@@ -1,0 +1,9 @@
+<form action="/mongooses/<%= mongoose[0].id %>" method="post">
+    <span>Name:</span>
+    <input type="text" name="name" value="<%= mongoose[0].name %>">
+    <br>
+    <span>Color:</span>
+    <input type="text" name="color" value="<%= mongoose[0].color %>">
+    <br>
+    <input type="submit" value="submit">
+</form>

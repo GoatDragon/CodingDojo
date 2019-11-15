@@ -1,0 +1,14 @@
+<h2>Mongooses</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>ID</th>
+    </tr>
+    <% for (mongoose of mongooses) { %>
+    <tr>
+        <td><%= mongoose.name %></td>
+        <td><%= mongoose.color %></td>
+        <td><%= mongoose.id %></td>
+    </tr>
+    <% } %>
