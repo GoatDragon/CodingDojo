@@ -41,7 +41,7 @@ class Deck {
         for (let s in suits) {
             for (let v in values) {
                 let n = new Card(suits[s], v)
-                this.cards.push(n.show())
+                this.cards.push(n)
             }
         }
     }
@@ -73,6 +73,7 @@ class Player {
         this._name = name
         this.hand = []
     }
+
     take(deck, num) {
         if (deck instanceof Deck) {
             for (let i = 0; i < num; i++) {
@@ -84,28 +85,28 @@ class Player {
         }
         return this
     }
+
     showHand() {
-        // console.log(`${this._name} has ${this.hand.length} cards in hand:`)
         let currenthand = []
         for (let card in this.hand) {
-            // console.log(card, this.hand[card])
-            currenthand.push(`<p> ${this.hand[card]} </p>`)
+            currenthand.push(`<p> ${this.hand[card].show()} </p>`)
         }
         return currenthand
     }
+
     play(card) {
         return `\n${this._name} plays ${this.hand.splice(card, 1)}\n`
     }
+
+    findTotal() {
+        let total = 0
+        for (let card in this.hand) {
+            if (Number(this.hand[card]._number) < 10) {
+                total += Number(this.hand[card]._number) + 1
+            }else{
+                total += 10
+            }
+        }
+        return total
+    }
 }
-
-
-// module.exports = {deck: Deck, player: Player}
-
-// d = new Deck
-// p = new Player('Hal')
-// d.shuffle()
-// d.remaining()
-// p.take(d, 7).showHand()
-// d.remaining()
-// console.log(p.play(3))
-// p.showHand()

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Blackjack</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="deckOfCards.js"></script>
+</head>
+<body>
+    <button id="play">play blackjack!</button>
+    <div id="hand"></div>
+    <div id="total"></div>
+    <button id="hit">hit me</button>
+    <!-- <button id="stay">stay</button> -->
+    <script>
+        d = new Deck
+        d.shuffle()
+        console.log(d)
+        p = new Player('player')
+        $("#play").click(function(){
+            p.hand=[]
+            p.take(d, 2)
+            $("#hand").html(p.showHand())
+            $("#total").html("total: " + p.findTotal())
+        })
+        $("#hit").click(function() {
+            p.take(d,1)
+            $("#hand").html(p.showHand())
+            $("#total").html("total: " + p.findTotal())
+        })
+    </script>
+</body>
+</html>
