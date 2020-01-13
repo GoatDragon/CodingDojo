@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Mongoose</title>
+</head>
+<body>
+    <form action="/users" method="post">
+        Name: <input type="text" name="name">
+        <br>
+        Age: <input type="text" name="age">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <h3>USERS</h3>
+    <table>
+    <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+    </tr>
+    <% for (user of users) { %>
+    <tr>
+        <td><%= user.name %></td>
+        <td><%= user.age %></td>
+    </tr>  
+    <% } %>
+</table>
+</body>
+</html>

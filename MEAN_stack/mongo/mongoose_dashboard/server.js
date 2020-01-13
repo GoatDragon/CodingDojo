@@ -57,7 +57,6 @@ app.post('/mongooses/:id', (req,res) => {
 })
 
 app.get('/mongooses/destroy/:id', (req,res) => {
-    console.log(req.body.id)
     Mongoose.deleteOne({_id: req.params.id})
     .then(res.redirect('/mongooses'))
     .catch(err => console.log(err))

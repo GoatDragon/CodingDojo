@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Board</title>
+</head>
+<body>
+    <h5>post a new message</h5>
+<form action="/newmessage" method="POST">
+    name:
+    <input type="text" name="name">
+    message:
+    <input type="text" name="message">
+    <input type="submit" value="new message">
+</form>
+    <% for (message of messages) { %>
+        <h4><%= message.name %></h4>
+        <p><%= message.message %></p>
+        <% for (comment in message.comments) { %>
+            <h4><%= comment.name %></h4>
+            <p><%= comment.comment %></p>
+        <% } %>
+        <h6>comment</h6>
+        <form action="/newcomment" method="POST">
+            name:
+            <input type="text"name="name">
+            comment:
+            <input type="text"name="comment">
+            <input type="hidden" name="message" value="<%= message._id %>">
+            <input type="submit" value="new comment">
+        </form>
+    <% } %>
+</body>
+</html>
