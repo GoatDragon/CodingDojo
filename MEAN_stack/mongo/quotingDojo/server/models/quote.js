@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/quoteDB', {useNewUrlParser: true});
+const mongoose = require('../config/mongoose.js')
 
 const QuoteSchema = new mongoose.Schema({
     name: String,

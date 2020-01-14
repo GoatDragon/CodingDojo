@@ -21,14 +21,17 @@ const Comment = mongoose.model('Post', CommentSchema);
 const MessageSchema = new mongoose.Schema({
     name: { type: String, required: true },
     message: { type: String, required: true },
-    comments: CommentSchema
+    comments: [CommentSchema]
 });
 const Message = mongoose.model('Message', MessageSchema);
 
 
 app.get('/', (req, res) => {
     Message.find()
-        .then(data => res.render('index', {messages: data}));
+        .then(data => {
+            console.log(data)
+            res.render('index', {messages: data})
+        })
 });
 
 app.post('/newmessage', (req, res) => {
@@ -39,6 +42,7 @@ app.post('/newmessage', (req, res) => {
 });
 
 app.post('/newcomment', (req, res) => {
+    console.log(req.body)
     const messageID = req.body.message;
     const comment = new Comment;
     comment.name = req.body.name;
@@ -47,11 +51,15 @@ app.post('/newcomment', (req, res) => {
         .then((newCommentData) => {
             Message.updateOne({_id: messageID}, {
                 $push: {comments: newCommentData}
-            }).then(result => console.log(result)).catch(err => console.log(err))
+            })
+                .then(result => {
+                    console.log(`RESULT ${result}`)
+                    res.redirect('/')
+                })
+                .catch(err => console.log(err))
             console.log(`Comment created: ${newCommentData}`)
         })
         .catch(err => console.log(`error: ${err}`));
-    res.redirect('/');
 });
 
 

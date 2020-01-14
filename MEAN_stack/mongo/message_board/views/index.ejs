@@ -15,7 +15,7 @@
     <% for (message of messages) { %>
         <h4><%= message.name %></h4>
         <p><%= message.message %></p>
-        <% for (comment in message.comments) { %>
+        <% for (comment of message.comments) { %>
             <h4><%= comment.name %></h4>
             <p><%= comment.comment %></p>
         <% } %>
