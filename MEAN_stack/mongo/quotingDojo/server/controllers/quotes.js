@@ -1,11 +1,4 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/quoteDB', {useNewUrlParser: true});
-
-const QuoteSchema = new mongoose.Schema({
-    name: String,
-    text: String
-}, {timestamps: true})
-const Quote = mongoose.model('Quote', QuoteSchema);
+const Quote = require('../models/quote.js')
 
 module.exports = {
     create: function(req, res) {
