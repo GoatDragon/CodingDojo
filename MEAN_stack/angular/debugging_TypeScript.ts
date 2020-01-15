@@ -17,7 +17,7 @@ console.log(sayHello('9'));
 
 
 // 3. Optional parameters
-function fullName(firstName: string, lastName: string, middleName: string){
+function fullName(firstName: string, lastName: string, middleName?: string){
    let fullName = `${firstName} ${middleName} ${lastName}`;
    return fullName;
 }
