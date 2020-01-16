@@ -15,6 +15,7 @@ module.exports = {
         Task.create(req.body)
             .then(data => res.json(data))
             .catch(err => res.json(err));
+            return this
     },
     update: function(req, res) {
         Task.updateOne({_id: req.params.id}, {
@@ -25,7 +26,7 @@ module.exports = {
             .then(data => res.json(data))
             .catch(err => res.json(err));
     },
-    delete: function (req, res) {
+    delete: function(req, res) {
         Task.remove({_id: req.params.id})
             .then(data => res.json(data))
             .catch(err => res.json(err));
