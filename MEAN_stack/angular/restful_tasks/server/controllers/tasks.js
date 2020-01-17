@@ -1,6 +1,9 @@
 const Task = require('../models/task.js')
 
 module.exports = {
+    // home: function(req, res){
+    //     res.json({test: 'what'})
+    // },
     index: function(req, res) {
         Task.find()
             .then(data => res.json(data))
@@ -15,7 +18,6 @@ module.exports = {
         Task.create(req.body)
             .then(data => res.json(data))
             .catch(err => res.json(err));
-            return this
     },
     update: function(req, res) {
         Task.updateOne({_id: req.params.id}, {
