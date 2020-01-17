@@ -1,9 +1,6 @@
 const Task = require('../models/task.js')
 
 module.exports = {
-    // home: function(req, res){
-    //     res.json({test: 'what'})
-    // },
     index: function(req, res) {
         Task.find()
             .then(data => res.json(data))

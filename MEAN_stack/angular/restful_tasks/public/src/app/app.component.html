@@ -1,7 +1,15 @@
 <h1>{{ title }}</h1>
-
+<button (click) = "getTasksFromService()">get all tasks</button>
 <div *ngFor="let task of tasks">
+<span>{{ task.title }}  </span>
+<button (click) = "getTaskDetails(task._id)">show details</button>
+</div>
+<div *ngFor="let task of detailedTasks">
 <p>{{ task.title }} - {{ task.description }}</p> 
 <p>Completed: {{ task.completed }}</p>
-<br>
 </div>
+
+<!-- 
+- {{ task.description }}</p> 
+<p>Completed: {{ task.completed }}</p>
+ -->
