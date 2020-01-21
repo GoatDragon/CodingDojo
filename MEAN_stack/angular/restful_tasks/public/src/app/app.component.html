@@ -1,12 +1,42 @@
 <h1>{{ title }}</h1>
+
+<form (submit)="onSubmit()">
+  <p> {{ newTask | json }} </p>
+  Title:<input type="text" name="title" [(ngModel)]="newTask.title">
+  Description:<input type="text" name="description" [(ngModel)]="newTask.description">
+  <input type="submit" value="create task">
+</form>
+
 <button (click) = "getTasksFromService()">get all tasks</button>
-<div *ngFor="let task of tasks">
-<span>{{ task.title }}  </span>
-<button (click) = "getTaskDetails(task._id)">show details</button>
+
+<div *ngIf="editTask">
+  <form (submit)="updateTask(editTask._id)">
+    <p> {{ editTask | json }} </p>
+    Title:<input type="text" name="title" [(ngModel)]="editTask.title">
+    Description:<input type="text" name="description" [(ngModel)]="editTask.description">
+    <input type="submit" value="edit task">
+  </form>
 </div>
-<div *ngFor="let task of detailedTasks">
-<p>{{ task.title }} - {{ task.description }}</p> 
-<p>Completed: {{ task.completed }}</p>
+
+<div *ngFor="let task of tasks">
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Desctiption</th>
+      <th>Completed?</th>
+    </tr>
+    <tr>
+      <td>{{ task.title }}</td>
+      <td>{{ task.description }}</td>
+      <td>{{ task.completed }}</td>
+    </tr>
+    <tr>
+      <td>
+        <button (click)="updateTask(task._id)">edit</button>
+        <button (click)="deleteTask(task._id)">delete</button>
+      </td>
+    </tr>
+  </table>
 </div>
 
 <!-- 
