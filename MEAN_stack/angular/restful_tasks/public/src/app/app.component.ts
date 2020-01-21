@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   tasks: any = [];
   newTask: any;
   editTask: any = false;
+  selectedTask: any = false;
 
   constructor(private _httpService: HttpService) {};
 
@@ -20,11 +21,11 @@ export class AppComponent implements OnInit {
 
   getTasksFromService() {
     let observable = this._httpService.getTasks();
-        observable.subscribe( data => { this.tasks = data });
+    observable.subscribe( data => { this.tasks = data });
   };
   getTaskDetails(id) {
     let observable = this._httpService.findTask(id);
-        observable.subscribe( data => { console.log(data) });
+    observable.subscribe( data => { console.log(data) });
   };
   onSubmit(params) {
     this._httpService.addTask(this.newTask)
@@ -35,15 +36,12 @@ export class AppComponent implements OnInit {
   };
   deleteTask(taskID) {
     this._httpService.deleteTask(taskID)
-        .subscribe( data => {
-            console.log('deleted', data)
-            this.getTasksFromService()
-            });
+        .subscribe( data => { this.getTasksFromService() });
   };
   updateTask(taskID) {
     if (this.editTask === false) {
-        let observable = this._httpService.findTask(taskID);
-        observable.subscribe( data => { this.editTask = data });
+        this._httpService.findTask(taskID)
+            .subscribe( data => { this.editTask = data });
     } else {
         this._httpService.updateTask(taskID, this.editTask)
             .subscribe( data => {
@@ -51,5 +49,8 @@ export class AppComponent implements OnInit {
                 this.getTasksFromService();
             });
     };
+  };
+  showTask(inputTask) {
+    this.selectedTask = inputTask
   };
 };

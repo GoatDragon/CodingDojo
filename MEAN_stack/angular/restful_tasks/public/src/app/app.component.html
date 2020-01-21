@@ -32,14 +32,12 @@
     </tr>
     <tr>
       <td>
-        <button (click)="updateTask(task._id)">edit</button>
         <button (click)="deleteTask(task._id)">delete</button>
+        <button (click)="updateTask(task._id)">edit</button>
+        <button (click)="showTask(task)">show</button>
       </td>
     </tr>
   </table>
 </div>
 
-<!-- 
-- {{ task.description }}</p> 
-<p>Completed: {{ task.completed }}</p>
- -->
+  <app-task *ngIf="selectedTask" [taskToShow]="selectedTask"></app-task>
