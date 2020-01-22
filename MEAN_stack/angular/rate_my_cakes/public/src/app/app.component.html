@@ -1,0 +1,40 @@
+<form (submit)="addCake()">
+  Baker:<input type="text" name="baker" [(ngModel)]="newCake.baker">
+  Image:<input type="text" name="image" [(ngModel)]="newCake.image">
+  <input type="submit" value="Add Cake">
+</form>
+
+<div *ngFor="let cake of cakes">
+  <table>
+    <tr>
+      <th>Baker</th>
+      <th>Image</th>
+      <th>Comment</th>
+    </tr>
+    <tr>
+      <td>{{ cake.baker }}</td>
+      <td><img src="{{ cake.image }}" alt=""></td>
+      <td>
+        <form (submit)="addComment()">
+          <input type="hidden" name="cake" value="{{ cake }}">
+          Comment:<input type="text" name="comment" [(ngModel)]="newComment.comment">
+          <br>
+          Rating:
+          <input type="radio" name="rating" value=1 [(ngModel)]="newComment.rating">1
+          <input type="radio" name="rating" value=2 [(ngModel)]="newComment.rating">2
+          <input type="radio" name="rating" value=3 [(ngModel)]="newComment.rating">3
+          <input type="radio" name="rating" value=4 [(ngModel)]="newComment.rating">4
+          <input type="radio" name="rating" value=5 [(ngModel)]="newComment.rating">5
+          <input type="submit" value="comment">
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button (click)="deleteCake(cake._id)">delete</button>
+        <!-- <button (click)="updateCake(cake._id)">edit</button> -->
+        <button (click)="showCake(cake)">show comments</button>
+      </td>
+    </tr>
+  </table>
+</div>
