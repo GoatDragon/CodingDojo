@@ -17,20 +17,23 @@ module.exports = function(app) {
     app.delete('/cakes/:id', (req, res) => {
         cakes.delete(req, res);
     });
+    app.put('/newcomment/:id', (req, res) => {
+        cakes.addComment(req, res);
+    })
 
-    app.get('/comments/', (req, res) => {  
-        comments.index(req, res);
-    });
-    app.get('/comments/:id', (req, res) => {
-        comments.find(req, res);
-    });
-    app.post('/comments/', (req, res) => {
-        comments.create(req, res);
-    });
-    app.put('/comments/:id', (req, res) => {
-        comments.update(req, res);
-    });
-    app.delete('/comments/:id', (req, res) => {
-        comments.delete(req, res);
-    });
+    // app.get('/comments/', (req, res) => {  
+    //     comments.index(req, res);
+    // });
+    // app.get('/comments/:id', (req, res) => {
+    //     comments.find(req, res);
+    // });
+    // app.post('/comments/', (req, res) => {
+    //     comments.create(req, res);
+    // });
+    // app.put('/comments/:id', (req, res) => {
+    //     comments.update(req, res);
+    // });
+    // app.delete('/comments/:id', (req, res) => {
+    //     comments.delete(req, res);
+    // });
 };

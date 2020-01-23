@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CakeComponent } from './cake/cake.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CakeComponent
   ],
   imports: [
     BrowserModule,

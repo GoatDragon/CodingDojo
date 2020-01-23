@@ -20,7 +20,13 @@ module.exports = {
         Cake.updateOne({_id: req.params.id}, {
             baker: req.body.baker,
             image: req.body.image,
-            comments: req.body.comment
+        })
+            .then(data => res.json(data))
+            .catch(err => res.json(err));
+    },
+    addComment: function(req, res) {
+        Cake.updateOne({_id: req.params.id}, {
+            $push: {comments: {comment: req.body.comment, rating: req.body.rating}}
         })
             .then(data => res.json(data))
             .catch(err => res.json(err));
@@ -31,3 +37,15 @@ module.exports = {
             .catch(err => res.json(err));
     }
 };
+
+
+
+// // ...update 1 document that matches the query object criteria
+// User.updateOne({name:'Bob Ross'}, {
+//     name: 'Ross Bob',
+//     $push: {pets: {name: 'Sprinkles', type: 'Chubby Unicorn' }}
+// })
+//     .then(result => {
+//         // logic with result -- note this will be the original object by default!
+//     })
+//     .catch(err => res.json(err));

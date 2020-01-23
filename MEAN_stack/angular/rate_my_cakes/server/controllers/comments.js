@@ -12,7 +12,10 @@ module.exports = {
             .catch(err => res.json(err));
     },
     create: function(req, res) {
-        Comment.create(req.body)
+        const comment = new Comment();
+        comment.comment = req.body.comment;
+        comment.rating = req.body.rating;
+        Comment.save()
             .then(data => res.json(data))
             .catch(err => res.json(err));
     },

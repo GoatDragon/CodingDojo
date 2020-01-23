@@ -22,8 +22,7 @@ export class HttpService {
   updateCake(cakeID, cakeObject) {
     return this._http.put('/cakes/' + cakeID, cakeObject);
   }
-
-  addComment(commentObject) {
-    return this._http.post('/comments', commentObject);
+  addComment(commentObject, cakeID) {
+    return this._http.put('/newcomment/' + cakeID, commentObject);
   }  
 }
