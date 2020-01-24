@@ -1,3 +1,6 @@
+// this file is unused
+// comments are contained in the cake model
+
 const Comment = require('../models/comment.js')
 
 module.exports = {

@@ -1,3 +1,6 @@
+// this file is unused
+// comments are contained in the cake model
+
 const mongoose = require('../config/mongoose.js')
 
 const CommentSchema = new mongoose.Schema({

@@ -1,5 +1,5 @@
 const cakes = require('../controllers/cakes.js');
-const comments = require('../controllers/comments.js');
+// const comments = require('../controllers/comments.js');
 
 module.exports = function(app) {
     app.get('/cakes/', (req, res) => {  

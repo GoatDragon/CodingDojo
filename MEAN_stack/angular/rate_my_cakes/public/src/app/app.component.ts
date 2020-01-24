@@ -7,6 +7,8 @@ import { HttpService } from './http.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent implements OnInit {
   newCake: any = {baker: "", image: ""};
   newComment: any = {comment: "", rating: ""};
@@ -53,5 +55,4 @@ export class AppComponent implements OnInit {
     let ratingAvg = total / amt
     this.cakeDisplay.avgRating = ratingAvg
   };
-
 };
