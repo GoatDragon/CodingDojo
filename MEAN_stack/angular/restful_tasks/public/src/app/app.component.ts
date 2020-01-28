@@ -9,14 +9,13 @@ import { HttpService } from './http.service';
 export class AppComponent implements OnInit {
   title: string = 'restful tasks';
   tasks: any = [];
-  newTask: any;
+  newTask: any = {title: "", description: ""};
   editTask: any = false;
   selectedTask: any = false;
 
   constructor(private _httpService: HttpService) {};
 
   ngOnInit() {
-    this.newTask = {title: "", description: ""};
   };
 
   getTasksFromService() {
@@ -27,7 +26,7 @@ export class AppComponent implements OnInit {
     let observable = this._httpService.findTask(id);
     observable.subscribe( data => { console.log(data) });
   };
-  onSubmit(params) {
+  onSubmit() {
     this._httpService.addTask(this.newTask)
         .subscribe( data => {
             this.newTask = {title: "", description: ""}

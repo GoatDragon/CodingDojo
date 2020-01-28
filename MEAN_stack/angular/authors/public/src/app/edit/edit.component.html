@@ -1,0 +1,10 @@
+<a [routerLink]="['/']">Home</a>
+
+<h5 *ngIf="errorMessage">{{ errorMessage }}</h5>
+
+<form (submit)="updateAuthor(editAuthor._id)" >
+    <input type="text" name="title" value="{{ editAuthor.name }}" [(ngModel)]="editAuthor.name">
+    <br>
+    <input type="submit" value="edit author">
+    <button [routerLink]="['/']">cancel</button>
+</form>
