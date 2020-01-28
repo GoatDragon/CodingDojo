@@ -1,0 +1,23 @@
+<a [routerLink]="['/']">Home</a>
+
+<h5 *ngIf="errorMessage">{{ errorMessage }}</h5>
+
+<form (submit)="onSubmit()" #form="ngForm">
+    <input type="text" name="quote" placeholder="quote" required minlength="3" [(ngModel)]="newQuote.quote" #name="ngModel">
+    <br>
+    <input type="submit"  value="add quote">
+    <button [routerLink]="['/']">cancel</button>
+</form>
+
+<!-- [disabled]="form.invalid" -->
+
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+class="alert alert-danger">
+    <div *ngIf="name.errors.required">
+        Quote is required.
+    </div>
+    <div *ngIf="name.errors.minlength">
+        Quote must be at least 3 characters long.
+    </div>
+</div>
